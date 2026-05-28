@@ -1,5 +1,19 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
 
+navigateTo("/");
+
+
+//TODO: Manejar "page" (en realidad componente) con pinia para manejar comportamientos
+// de scroll, gsap (monting, unmonting) y estados.
+//Hacer un Util donde use toRout
+
+
+
+</script>
 <template>
-  <h1 class="text-red-500 bg-black h-screen w-full">Home</h1>
+  <div class="overflow-hidden w-screen h-screen">
+
+    <Home />
+
+  </div>
 </template>
