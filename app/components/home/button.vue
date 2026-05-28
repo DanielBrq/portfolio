@@ -10,8 +10,8 @@ const { label } = defineProps({
 <template>
 
     <button @click="$emit('click')"
-        class="group flex flex-col items-center justify-center text-niel-neutral-500 hover:text-niel-primary-400
-        text-xl text-center font-light uppercase tracking-[0.5em] w-[25%] transition-colors duration-200 cursor-pointer">
+        class="group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
+        text-xl text-center font-light uppercase tracking-[0.5em] w-[25%] transition-colors duration-200 cursor-pointer hover:animate-pulse">
 
         <span>{{ label }}</span>
         <div
