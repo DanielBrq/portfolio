@@ -4,19 +4,18 @@ const { label } = defineProps({
         type: String,
         required: true
     }
-})
-
+});
 </script>
-<template>
 
+<template>
     <button @click="$emit('click')"
-        class="group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
-        text-xl text-center font-light uppercase tracking-[0.5em] w-[25%] transition-colors duration-200 cursor-pointer hover:animate-pulse">
+        class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
+        text-xl text-center font-light uppercase tracking-[0.5em] w-[25%] transition-colors duration-200 cursor-pointer"
+        style="opacity: 0; transform: translateY(12px);">
 
         <span>{{ label }}</span>
         <div
             class="w-full h-0.5 mt-1 bg-linear-to-r from-transparent via-niel-primary-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         </div>
     </button>
-
 </template>
