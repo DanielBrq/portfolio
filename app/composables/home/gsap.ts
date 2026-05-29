@@ -1,10 +1,11 @@
 import { ref, onMounted } from 'vue';
 import gsap from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
+import { useSound } from '~/composables/useSound';
 
 gsap.registerPlugin(TextPlugin);
 
-
+const { playType, stopType } = useSound();
 
 export function useHomeGsap(homeText: any) {
     const topBar = ref<HTMLElement | null>(null);
@@ -18,6 +19,7 @@ export function useHomeGsap(homeText: any) {
     const isLeaving = ref(false);
 
     onMounted(() => {
+
         const fullName = 'Daniel Barquero Cabrera';
         const fullJob = homeText.value.job;
         const nameCharDuration = 0.03;
@@ -41,6 +43,9 @@ export function useHomeGsap(homeText: any) {
             });
         }
 
+        // Start typing sound for name animation
+        playType();
+
         gsap.to(nameEl.value, {
             duration: fullName.length * nameCharDuration,
             text: { value: fullName, delimiter: '' },
@@ -63,6 +68,8 @@ export function useHomeGsap(homeText: any) {
                     text: { value: fullJob, delimiter: '' },
                     ease: 'none',
                     onComplete: () => {
+ 
+                        stopType();
                         if (jobCursorBlink) jobCursorBlink.kill();
                         gsap.to(jobCursorEl.value, { opacity: 0, duration: 0.1, delay: 0, ease: 'power2.out' });
                     }
