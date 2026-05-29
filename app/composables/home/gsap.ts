@@ -3,12 +3,13 @@ import gsap from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { useSound } from '~/composables/useSound';
 import { usePagesState } from '~/stores/PagesState';
+import { watch } from 'vue';
 
 gsap.registerPlugin(TextPlugin);
 
 const { playType, stopType } = useSound();
 
-export function useHomeGsap(homeText: any) {
+export function useHomeGsap(t: any) {
     const topBar = ref<HTMLElement | null>(null);
     const bottomBar = ref<HTMLElement | null>(null);
     const content = ref<HTMLElement | null>(null);
@@ -24,7 +25,7 @@ export function useHomeGsap(homeText: any) {
     onMounted(() => {
 
         const fullName = 'Daniel Barquero Cabrera';
-        const fullJob = homeText.value.job;
+        const fullJob = t('home.job');
         const nameCharDuration = 0.03;
         const jobCharDuration = nameCharDuration + 0.2 / fullJob.length;
 
@@ -88,6 +89,17 @@ export function useHomeGsap(homeText: any) {
                 ease: 'power2.out',
                 stagger: 0.08,
                 delay: 1.0
+            });
+        }
+    });
+
+
+    watch(() => t('home.job'), (newJob) => {
+        if (jobEl.value) {
+            gsap.to(jobEl.value, {
+                duration: 0.5,
+                text: { value: newJob, delimiter: '' },
+                ease: 'none'
             });
         }
     });

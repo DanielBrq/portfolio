@@ -1,0 +1,17 @@
+{
+    "home": {
+        "header": "Inicio",
+        "job": "Desarrollador Full Stack",
+        "options": {
+            "about": "Sobre Mi",
+            "skills": "Habilidades",
+            "experience": "Experiencia",
+            "contact": "Contactame"
+        },
+        "settings": {
+            "settingsButton": "Configuración",
+            "language": "Idioma",
+            "music": "Música"
+        }
+    }
+}

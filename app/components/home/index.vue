@@ -2,14 +2,9 @@
 import { useHomeGsap } from '~/composables/home/gsap';
 import OptionButton from '../optionButton.vue';
 
-//TODO: For i18n, will manage with pinia
-const homeText = ref({
-    job: 'Full Stack Developer',
-    about: 'About me',
-    skills: 'Skills',
-    projects: 'Projects',
-    contact: 'Contact'
-});
+const { t } = useI18n();
+
+useHead({ title: t('home.header') });
 
 const {
     topBar,
@@ -21,14 +16,14 @@ const {
     jobCursorEl,
     navEl,
     startLeaveAnimation
-} = useHomeGsap(homeText);
+} = useHomeGsap(t);
 
 defineExpose({ startLeaveAnimation });
 </script>
 
 <template>
     <section class="scrollbar-none overscroll-y-none relative">
-
+        <HomeSettings />
         <div ref="topBar" class="bg-black fixed top-0 left-0 w-full z-20" style="height: 0;" />
 
         <div ref="content">
@@ -38,7 +33,7 @@ defineExpose({ startLeaveAnimation });
                 class="flex flex-col gap-1 h-full min-h-[70vh] justify-center items-center z-10 select-none">
                 <div class="relative inline-flex items-center justify-center">
                     <h1 ref="nameEl" aria-label="Daniel Barquero Cabrera" style=""
-                        class="niel-gradient-w text-6xl text-center font-extralight uppercase tracking-[0.5em] leading-20 name animate-pulse-name">
+                        class="niel-gradient-w text-7xl text-center font-extralight uppercase tracking-[0.3em] leading-20 name animate-pulse-name">
                     </h1>
                     <span ref="nameCursorEl" class="typing-cursor niel-gradient-w text-6xl font-extralight leading-20"
                         style="opacity: 0;">|</span>
@@ -55,10 +50,10 @@ defineExpose({ startLeaveAnimation });
 
             <div>
                 <nav ref="navEl" class="flex flex-row justify-around px-[15%] mb-[10vh]">
-                    <OptionButton :label="homeText.about" @click="startLeaveAnimation('/about')" />
-                    <OptionButton :label="homeText.skills" @click="startLeaveAnimation('/skills')" />
-                    <OptionButton :label="homeText.projects" @click="startLeaveAnimation('/projects')" />
-                    <OptionButton :label="homeText.contact" @click="startLeaveAnimation('/contact')" />
+                    <OptionButton :label="t('home.options.about')" @click="startLeaveAnimation('/about')" />
+                    <OptionButton :label="t('home.options.skills')" @click="startLeaveAnimation('/skills')" />
+                    <OptionButton :label="t('home.options.experience')" @click="startLeaveAnimation('/experience')" />
+                    <OptionButton :label="t('home.options.contact')" @click="startLeaveAnimation('/contact')" />
                 </nav>
             </div>
         </div>
@@ -66,12 +61,13 @@ defineExpose({ startLeaveAnimation });
         <div ref="bottomBar" class="bg-black fixed bottom-0 left-0 w-full z-20" style="height: 0;" />
     </section>
 </template>
+
+
 <style scoped>
 .name {
     font-family: "Tilt Neon", sans-serif;
-    font-weight: 400;
     font-style: normal;
-    transform: scaleY(1.8);
+    transform: scaleY(1.4);
     font-optical-sizing: auto;
     font-variation-settings:
         "XROT" 0,
@@ -84,13 +80,16 @@ defineExpose({ startLeaveAnimation });
 }
 
 @keyframes glow-pulse {
-    0%, 100% {
-        text-shadow: 
+
+    0%,
+    100% {
+        text-shadow:
             0 0 4px rgba(254, 215, 170, 0.3),
             0 0 10px rgba(254, 215, 170, 0.15);
     }
+
     50% {
-        text-shadow: 
+        text-shadow:
             0 0 4px rgba(254, 215, 170, 0.5),
             0 0 10px rgba(254, 215, 170, 0.25);
     }

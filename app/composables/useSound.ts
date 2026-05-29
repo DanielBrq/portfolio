@@ -1,51 +1,51 @@
 import { Howl } from "howler";
+import { ref } from "vue";
+
+// Sounds =======================================================
+const buttonHover = new Howl({
+    src: ["/sounds/button-hover.wav"],
+    volume: 0.6
+});
+
+const typeSound = new Howl({
+    src: ["/sounds/type-sound.mp3"],
+    volume: 0.6,
+    loop: true
+});
+
+const clickSound = new Howl({
+    src: ["/sounds/ui-click.mp3"],
+    volume: 0.3,
+    rate: 0.6
+});
+
+// Music ========================================================
+const music = [
+    new Howl({
+        src: ["/sounds/atmospheric-loop.wav"],
+        volume: 0.3,
+        loop: true
+    }),
+
+    new Howl({
+        src: ["/sounds/atmospheric-piano.wav"],
+        volume: 0.3,
+        loop: true
+    })
+];
+
+const isMusicPlaying = ref(false);
 
 export function useSound() {
-
-    // Sounds =======================================================
-    const buttonHover = new Howl({
-        src: ["/sounds/button-hover.wav"],
-        volume: 0.6
-    });
-
-    const typeSound = new Howl({
-        src: ["/sounds/type-sound.mp3"],
-        volume: 0.6,
-        loop: true
-    });
-
-    const clickSound = new Howl({
-        src: ["/sounds/ui-click.mp3"],
-        volume: 0.3,
-        rate: 0.6
-    });
-
-    // Music ========================================================
-    const music = [
-        new Howl({
-            src: ["/sounds/atmospheric-loop.wav"],
-            volume: 0.3,
-            loop: true
-        }),
-
-        new Howl({
-            src: ["/sounds/atmospheric-piano.wav"],
-            volume: 0.3,
-            loop: true
-        })
-    ];
-
-    let currentMusic: Howl | null = null;
 
     // Functions ====================================================
 
     function stopMusic() {
-        currentMusic?.stop();
-        currentMusic = null;
+        music.forEach(m => m.stop());
+        isMusicPlaying.value = false;
     }
 
     function playMusic() {
-
         // Stop previous music
         stopMusic();
 
@@ -54,9 +54,8 @@ export function useSound() {
             Math.random() * music.length
         );
 
-        currentMusic = music[randomIndex] ?? null;
-
-        currentMusic?.play();
+        music[randomIndex]?.play();
+        isMusicPlaying.value = true;
     }
 
     function playHover() {
@@ -89,6 +88,7 @@ export function useSound() {
         stopType,
         playClick,
         playMusic,
-        stopMusic
+        stopMusic,
+        isMusicPlaying
     };
 }

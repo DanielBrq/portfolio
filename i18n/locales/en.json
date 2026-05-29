@@ -1,0 +1,17 @@
+{
+    "home": {
+        "header": "Home",
+        "job": "Full Stack Developer",
+        "options": {
+            "about": "About",
+            "skills": "Skills",
+            "experience": "Experience",
+            "contact": "Contact"
+        },
+        "settings": {
+            "settingsButton": "Settings",
+            "language": "Language",
+            "music": "Music"
+        }
+    }
+}

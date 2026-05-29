@@ -12,8 +12,7 @@ export default defineNuxtConfig({
     preset: "bun",
     routeRules: {
       '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-      '/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-      '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
+      '/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
     }
   },
   app: {
@@ -27,9 +26,30 @@ export default defineNuxtConfig({
   },
   ssr: false,
   devtools: { enabled: false },
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
   pinia: {
     storesDirs: ["stores"],
+  },
+  i18n: {
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    },
+    locales: [
+      {
+        code: 'en',
+        language: 'en-US',
+        file: 'en.json'
+      },
+      {
+        code: 'es',
+        language: 'es-CR',
+        file: 'es.json'
+      }
+    ]
   },
   vite: {
     plugins: [
@@ -38,7 +58,7 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         "workbox-window",
-        "@vueuse/core",
+        // "@vueuse/core",
         'gsap',
         'gsap/ScrollTrigger',
       ],
