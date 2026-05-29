@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useHomeGsap } from '~/composables/home/gsap';
+import OptionButton from '../optionButton.vue';
 
 //TODO: For i18n, will manage with pinia
 const homeText = ref({
@@ -21,8 +22,6 @@ const {
     navEl,
     startLeaveAnimation
 } = useHomeGsap(homeText);
-
-
 
 defineExpose({ startLeaveAnimation });
 </script>
@@ -52,16 +51,16 @@ defineExpose({ startLeaveAnimation });
                         style="opacity: 0;">|</span>
 
                 </div>
-        </div>
+            </div>
 
-        <div>
-            <nav ref="navEl" class="flex flex-row justify-around px-[15%] mb-[10vh]">
-                <HomeButton :label="homeText.about" @click="startLeaveAnimation('/about')" />
-                <HomeButton :label="homeText.skills" @click="startLeaveAnimation('/skills')" />
-                <HomeButton :label="homeText.projects" @click="startLeaveAnimation('/projects')" />
-                <HomeButton :label="homeText.contact" @click="startLeaveAnimation('/contact')" />
-            </nav>
-        </div>
+            <div>
+                <nav ref="navEl" class="flex flex-row justify-around px-[15%] mb-[10vh]">
+                    <OptionButton :label="homeText.about" @click="startLeaveAnimation('/about')" />
+                    <OptionButton :label="homeText.skills" @click="startLeaveAnimation('/skills')" />
+                    <OptionButton :label="homeText.projects" @click="startLeaveAnimation('/projects')" />
+                    <OptionButton :label="homeText.contact" @click="startLeaveAnimation('/contact')" />
+                </nav>
+            </div>
         </div>
 
         <div ref="bottomBar" class="bg-black fixed bottom-0 left-0 w-full z-20" style="height: 0;" />
@@ -81,7 +80,20 @@ defineExpose({ startLeaveAnimation });
 }
 
 .animate-pulse-name {
-    animation: pulse 4s cubic-bezier(0.6, 0, 0.8, 1) infinite;
+    animation: glow-pulse 5s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 4px rgba(254, 215, 170, 0.3),
+            0 0 10px rgba(254, 215, 170, 0.15);
+    }
+    50% {
+        text-shadow: 
+            0 0 4px rgba(254, 215, 170, 0.5),
+            0 0 10px rgba(254, 215, 170, 0.25);
+    }
 }
 
 .animate-pulse-job {

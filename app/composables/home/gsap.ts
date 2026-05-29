@@ -2,6 +2,7 @@ import { ref, onMounted } from 'vue';
 import gsap from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { useSound } from '~/composables/useSound';
+import { usePagesState } from '~/stores/PagesState';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -18,6 +19,8 @@ export function useHomeGsap(homeText: any) {
     const navEl = ref<HTMLElement | null>(null);
     const isLeaving = ref(false);
 
+    const pagesStore = usePagesState();
+
     onMounted(() => {
 
         const fullName = 'Daniel Barquero Cabrera';
@@ -31,9 +34,9 @@ export function useHomeGsap(homeText: any) {
 
         const tl = gsap.timeline();
 
-        tl.to(topBar.value,    { height: '8vh', duration: 0.8, ease: 'power2.out' }, 0)
-          .to(bottomBar.value, { height: '8vh', duration: 0.8, ease: 'power2.out' }, 0)
-          .to(content.value,   { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0);
+        tl.to(topBar.value, { height: '8vh', duration: 0.8, ease: 'power2.out' }, 0)
+            .to(bottomBar.value, { height: '8vh', duration: 0.8, ease: 'power2.out' }, 0)
+            .to(content.value, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, 0);
 
         let nameCursorBlink: gsap.core.Tween | null = null;
         if (nameCursorEl.value) {
@@ -68,7 +71,6 @@ export function useHomeGsap(homeText: any) {
                     text: { value: fullJob, delimiter: '' },
                     ease: 'none',
                     onComplete: () => {
- 
                         stopType();
                         if (jobCursorBlink) jobCursorBlink.kill();
                         gsap.to(jobCursorEl.value, { opacity: 0, duration: 0.1, delay: 0, ease: 'power2.out' });
@@ -107,7 +109,7 @@ export function useHomeGsap(homeText: any) {
 
             tl.to([topBar.value, bottomBar.value], {
                 height: 0,
-                duration: 0.6,
+                duration: 0.2,
                 ease: "power2.in",
                 stagger: {
                     amount: 0.2,
@@ -125,6 +127,7 @@ export function useHomeGsap(homeText: any) {
             if (jobCursorEl.value) gsap.killTweensOf(jobCursorEl.value);
 
             setTimeout(() => {
+                pagesStore.setCurrentPage(to);
                 navigateTo(to);
             }, 1000);
         });

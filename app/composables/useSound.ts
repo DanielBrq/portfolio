@@ -1,29 +1,94 @@
-// composables/useSound.ts
+import { Howl } from "howler";
+
 export function useSound() {
-    const sounds = {
-        buttonHover: new Audio('/sounds/button-hover.wav'),
-        typeSound: new Audio('/sounds/type-sound.mp3'),
-    };
 
-    sounds.buttonHover.volume = 0.6;
-    sounds.typeSound.volume = 0.6;
+    // Sounds =======================================================
+    const buttonHover = new Howl({
+        src: ["/sounds/button-hover.wav"],
+        volume: 0.6
+    });
 
-    sounds.typeSound.loop = true;
+    const typeSound = new Howl({
+        src: ["/sounds/type-sound.mp3"],
+        volume: 0.6,
+        loop: true
+    });
 
-    function playHover() {
-        sounds.buttonHover.currentTime = 0;
-        sounds.buttonHover.play().catch(() => { });
+    const clickSound = new Howl({
+        src: ["/sounds/ui-click.mp3"],
+        volume: 0.3,
+        rate: 0.6
+    });
+
+    // Music ========================================================
+    const music = [
+        new Howl({
+            src: ["/sounds/atmospheric-loop.wav"],
+            volume: 0.3,
+            loop: true
+        }),
+
+        new Howl({
+            src: ["/sounds/atmospheric-piano.wav"],
+            volume: 0.3,
+            loop: true
+        })
+    ];
+
+    let currentMusic: Howl | null = null;
+
+    // Functions ====================================================
+
+    function stopMusic() {
+        currentMusic?.stop();
+        currentMusic = null;
     }
 
-    function playType() {
-        sounds.typeSound.currentTime = 0;
-        sounds.typeSound.play().catch(() => {});
+    function playMusic() {
+
+        // Stop previous music
+        stopMusic();
+
+        // Random track
+        const randomIndex = Math.floor(
+            Math.random() * music.length
+        );
+
+        currentMusic = music[randomIndex] ?? null;
+
+        currentMusic?.play();
+    }
+
+    function playHover() {
+        buttonHover.stop(); // restart instantly
+        buttonHover.play();
+    }
+
+    function playType(duration = 2500) {
+
+        typeSound.stop();
+        typeSound.play();
+
+        setTimeout(() => {
+            stopType();
+        }, duration);
     }
 
     function stopType() {
-        sounds.typeSound.pause();
-        sounds.typeSound.currentTime = 0;
+        typeSound.stop();
     }
 
-    return { playHover, playType, stopType };
+    function playClick() {
+        clickSound.stop();
+        clickSound.play();
+    }
+
+    return {
+        playHover,
+        playType,
+        stopType,
+        playClick,
+        playMusic,
+        stopMusic
+    };
 }
