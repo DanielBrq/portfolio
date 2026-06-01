@@ -1,4 +1,5 @@
 {
+    "returnButton": "Return",
     "home": {
         "header": "Home",
         "job": "Full Stack Developer",

@@ -18,6 +18,7 @@ export function useHomeGsap(t: any) {
     const nameCursorEl = ref<HTMLElement | null>(null);
     const jobCursorEl = ref<HTMLElement | null>(null);
     const navEl = ref<HTMLElement | null>(null);
+    const navElFast = ref<HTMLElement | null>(null);
     const isLeaving = ref(false);
 
     const pagesStore = usePagesState();
@@ -91,6 +92,17 @@ export function useHomeGsap(t: any) {
                 delay: 1.0
             });
         }
+        if (navElFast.value) {
+            const buttons = navElFast.value.querySelectorAll('.nav-button');
+            gsap.to(buttons, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: 'power2.out',
+                stagger: 0.08,
+                delay: 0.3
+            });
+        }
     });
 
 
@@ -154,6 +166,7 @@ export function useHomeGsap(t: any) {
         nameCursorEl,
         jobCursorEl,
         navEl,
+        navElFast,
         isLeaving,
         startLeaveAnimation
     };

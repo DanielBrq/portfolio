@@ -1,4 +1,5 @@
 {
+    "returnButton": "Regresar",
     "home": {
         "header": "Inicio",
         "job": "Desarrollador Full Stack",
@@ -12,6 +13,20 @@
             "settingsButton": "Configuración",
             "language": "Idioma",
             "music": "Música"
+        }
+    },
+    "contact": {
+        "title": "Contacto",
+        "subtitle": "Ponte en contacto conmigo",
+        "labels": {
+            "email": "Correo Electrónico",
+            "linkedin": "LinkedIn",
+            "github": "GitHub"
+        },
+        "options": {
+            "email": "Correo Electrónico",
+            "linkedin": "LinkedIn",
+            "github": "GitHub"
         }
     }
 }
