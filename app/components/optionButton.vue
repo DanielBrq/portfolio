@@ -10,16 +10,9 @@ const { label } = defineProps({
 
 const { playHover, playClick } = useSound();
 
-function onHover() {
-    playHover();
-}
-
-function onClick() {
-    playClick();
-}
 </script>
 <template>
-    <button @click="onClick" @mouseenter="onHover"
+    <button @click="playClick()" @mouseenter="playHover()"
         class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
         text-xl text-center font-light uppercase tracking-[0.5em] w-[25%] transition-colors duration-200 cursor-pointer select-none">
 

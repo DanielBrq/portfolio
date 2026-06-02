@@ -14,5 +14,19 @@
             "language": "Language",
             "music": "Music"
         }
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Get in touch with me",
+        "labels": {
+            "email": "Email",
+            "linkedin": "LinkedIn",
+            "github": "GitHub"
+        },
+        "options": {
+            "email": "Email",
+            "linkedin": "LinkedIn",
+            "github": "GitHub"
+        }
     }
 }

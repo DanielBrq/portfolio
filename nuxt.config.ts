@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   },
   ssr: false,
   devtools: { enabled: false },
-  modules: ['@pinia/nuxt', '@nuxtjs/i18n'],
+  modules: ['@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image'],
   pinia: {
     storesDirs: ["stores"],
   },
@@ -58,7 +58,7 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         "workbox-window",
-        // "@vueuse/core",
+        // "@vueuse/core", //enable when mobile responsive
         'gsap',
         'gsap/ScrollTrigger',
       ],
