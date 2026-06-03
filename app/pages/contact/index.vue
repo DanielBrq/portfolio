@@ -26,7 +26,7 @@ const copyToClipboard = (text: string) => {
             </div>
             <div class="relative inline-flex flex-col items-center justify-center group">
                 <h3 ref="jobEl" :aria-label="t('contact.subtitle')"
-                    class="text-niel-primary-100 mt-1 text-medium text-center font-light uppercase tracking-[0.5em] animate-pulse-job">
+                    class="text-niel-primary-100 mt-1 text-medium text-center font-light uppercase tracking-[0.5em]">
                     {{ t('contact.subtitle') }}
                 </h3>
             </div>

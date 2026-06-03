@@ -1,5 +1,16 @@
 {
     "returnButton": "Regresar",
+    "skills": {
+        "skillsButton": {
+            "other": "Otro"
+        }
+    },
+    "experience": {
+        "repoMode": {
+            "private": "Privado",
+            "public": "Publico"
+        }
+    },
     "home": {
         "header": "Inicio",
         "job": "Desarrollador Full Stack",
