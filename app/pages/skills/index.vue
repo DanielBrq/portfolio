@@ -5,32 +5,31 @@ const { t } = useI18n();
 useHead({ title: t('home.options.skills') })
 
 const backendSkills = [
-    { index: 2, name: '.NET Core', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/960px-.NET_Core_Logo.svg.png', color: 'rgba(99, 102, 241, 0.6)' },
-    { index: 0, name: 'NestJS', icon: 'https://nestjs.com/logo-small-gradient.0ed287ce.svg', color: 'rgba(244, 63, 94, 0.6)' },
-    { index: 1, name: 'Node.js / Express.js', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg', color: 'rgba(34, 197, 94, 0.6)' },
-    { index: 5, name: 'Hono', icon: 'https://avatars.githubusercontent.com/u/98495527?v=4', color: 'rgba(244, 63, 94, 0.6)' },
-    { index: 3, name: 'PostgreSQL', icon: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg', color: 'rgba(59, 130, 246, 0.6)' },
-    { index: 4, name: 'MySQL', icon: 'https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg', color: 'rgba(249, 115, 22, 0.6)' },
+    { index: 0, name: '.NET Core', icon: 'img/netcore.png', color: 'rgba(99, 102, 241, 0.6)' },
+    { index: 1, name: 'NestJS', icon: 'img/nestjs.svg', color: 'rgba(244, 63, 94, 0.6)' },
+    { index: 2, name: 'Node.js / Express.js', icon: 'img/nodejs.svg', color: 'rgba(34, 197, 94, 0.6)' },
+    { index: 3, name: 'PostgreSQL', icon: 'img/postgresql.svg', color: 'rgba(59, 130, 246, 0.6)' },
+    { index: 4, name: 'MySQL', icon: 'img/mysql.svg', color: 'rgba(249, 115, 22, 0.6)' },
 
 ];
 
 const frontendSkills = [
-    { index: 0, name: 'Vue', icon: 'https://icons.veryicon.com/png/o/business/vscode-program-item-icon/vue-2.png', color: 'rgba(16, 185, 129, 0.6)' },
-    { index: 1, name: 'React', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png', color: 'rgba(59, 130, 246, 0.6)' },
-    { index: 2, name: 'Nuxt', icon: 'https://nuxt.com/assets/design-kit/icon-green.svg', color: 'rgba(34, 197, 94, 0.6)' },
-    { index: 3, name: 'Tailwind CSS', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg', color: 'rgba(20, 184, 166, 0.6)' },
-    { index: 4, name: 'TypeScript', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg', color: 'rgba(14, 165, 233, 0.6)' },
-    { index: 5, name: 'JavaScript', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg', color: 'rgba(249, 115, 22, 0.6)' },
+    { index: 0, name: 'Vue', icon: 'img/vue.png', color: 'rgba(16, 185, 129, 0.6)' },
+    { index: 1, name: 'React', icon: 'img/react.png', color: 'rgba(59, 130, 246, 0.6)' },
+    { index: 2, name: 'Nuxt', icon: 'img/nuxt.svg', color: 'rgba(34, 197, 94, 0.6)' },
+    { index: 3, name: 'TailwindCSS', icon: 'img/tailwind.svg', color: 'rgba(20, 184, 166, 0.6)' },
+    { index: 4, name: 'TypeScript', icon: 'img/typescript.svg', color: 'rgba(14, 165, 233, 0.6)' },
+    { index: 5, name: 'JavaScript', icon: 'img/javascript.svg', color: 'rgba(249, 115, 22, 0.6)' },
 ]
 
 const otherSkills = [
-    { index: 0, name: 'Azure DevOps', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-azure-devops-icon-svg-download-png-3029870.png?f=webp&w=128', color: 'rgba(59, 130, 246, 0.6)' },
-    { index: 1, name: 'GitHub', icon: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png', color: 'rgba(255, 255, 255, 0.5)' },
-    { index: 2, name: 'Postman', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png', color: 'rgba(249, 115, 22, 0.6)' },
-    { index: 3, name: 'Swagger', icon: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png', color: 'rgba(132, 204, 22, 0.6)' },
-    { index: 4, name: 'Clerk', icon: 'https://clerk.com/v2/downloads/symbol-primary.png', color: 'rgba(99, 102, 241, 0.6)' },
-    { index: 5, name: 'Dokploy', icon: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dokploy-dark.png', color: 'rgba(59, 130, 246, 0.6)' },
-    { index: 6, name: 'Cloudflare', icon: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/cloudflare.png', color: 'rgba(249, 115, 22, 0.6)' },
+    { index: 0, name: 'Azure DevOps', icon: 'img/azure.png', color: 'rgba(59, 130, 246, 0.6)' },
+    { index: 1, name: 'GitHub', icon: 'img/github.png', color: 'rgba(255, 255, 255, 0.5)' },
+    { index: 2, name: 'Postman', icon: 'img/postman.png', color: 'rgba(249, 115, 22, 0.6)' },
+    { index: 3, name: 'Swagger', icon: 'img/swagger.png', color: 'rgba(132, 204, 22, 0.6)' },
+    { index: 4, name: 'Clerk', icon: 'img/clerk.png', color: 'rgba(99, 102, 241, 0.6)' },
+    { index: 5, name: 'Dokploy', icon: 'img/dokploy.png', color: 'rgba(59, 130, 246, 0.6)' },
+    { index: 6, name: 'Cloudflare', icon: 'img/cloudflare.png', color: 'rgba(249, 115, 22, 0.6)' },
 ]
 
 const buttonLabel = ['Backend', 'Frontend', t('skills.skillsButton.other')]
@@ -65,8 +64,8 @@ const nextSkills = () => {
                             '--hover-border': skill?.color?.replace(/0\.\d/, '0.8')
                         }">
                         <div class="flex flex-col items-center gap-1">
-                            <div class="object-contain mb-8">
-                                <NuxtImg :src="skill?.icon" :alt="skill?.name" width="100" height="100" />
+                            <div class=" mb-8">
+                                <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-[120px] max-h-[120px] max-w-[120px]" />
                             </div>
                             <span class="text-niel-primary-200 text-start text-lg font-light fixed bottom-0 p-2">{{
                                 skill?.name }}</span>

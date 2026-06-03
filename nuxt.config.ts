@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     preset: "bun",
     routeRules: {
       '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-      '/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
+      '/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+      '/img/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
     }
   },
   app: {
