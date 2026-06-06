@@ -6,19 +6,53 @@
         }
     },
     "experience": {
+        "details": {
+            "aboutMe": {
+                "title": "Sobre Mi",
+                "description": "Profesional en ingeniería en sistemas enfocado en desarrollo Full Stack, enfocado siempre en seguir las buenas prácticas, orden, comunicación y calidad de software.",
+                "universityTitle": "Universidad Fidélitas",
+                "universitySubtitle": "Ingeniería en Sistemas de Computación",
+                "universityDegree": "Bachillerato"
+            }
+        },
+        "experience": {
+            "factorK": {
+                "description": "Desarrollo de Software SaaS B2B interno para compañias para la gestion de equipos, empleados y procesos internos.",
+                "subtitle": "Desarrollador Full Stack",
+                "period": "Octubre 2025 - Abril 2026",
+                "achievements": {
+                    "item_1": "Desarrollé interfaces frontend mobile-first con TailwindCSS siguiendo estándares pixel-perfect para mantener fidelidad con diseños en Figma y asegurar consistencia visual entre módulos.",
+                    "item_2": "Construí y mantuve componentes reutilizables mediante librerías compartidas y Storybook, reduciendo duplicación de código entre aplicaciones frontend.",
+                    "item_3": "Trabajé con arquitectura micro-frontend en React y Angular para dividir módulos de negocio y facilitar mantenimiento, despliegue y escalabilidad de las aplicaciones.",
+                    "item_4": "Implementé APIs y lógica de negocio con .NET Core y MySQL, integrando autenticación externa con Clerk y manejo de datos multi-tenant con aislamiento entre clientes.",
+                    "item_5": "Homologué persistencia de datos entre distintos servicios para evitar registros huérfanos y mantener congruencia entre sistemas de autenticación y base de datos.",
+                    "item_6": "Desarrollé funcionalidades siguiendo principios de Clean Architecture para mantener separación de responsabilidades y facilitar la mantenibilidad del proyecto.",
+                    "item_7": "Realicé revisiones de código enfocadas en prevención de bugs, cumplimiento de estándares internos y detección de malas prácticas durante el desarrollo.",
+                    "item_8": "Colaboré bajo metodología SCRUM participando en planificación de sprints, resolución de bloqueos técnicos y coordinación de entregas en equipo.",
+                    "item_9": "Utilicé Azure y Azure DevOps para versionamiento, administración de ramas y resolución de conflictos durante procesos de integración y despliegue."
+                }
+            }
+        }
+    },
+    "projects": {
         "repoMode": {
-            "private": "Privado",
-            "public": "Publico"
+            "private": "Repositorio privado",
+            "public": "Repositorio público"
+        },
+        "detailsButton": "Detalles",
+        "cardPreview": {
+            "title": "LegacyGym",
+            "description": "Aplicación para la gestión de clientes y rutinas impulsadas con IA"
         }
     },
     "home": {
         "header": "Inicio",
         "job": "Desarrollador Full Stack",
         "options": {
-            "about": "Sobre Mi",
             "skills": "Habilidades",
             "experience": "Experiencia",
-            "contact": "Contactame"
+            "contact": "Contactame",
+            "projects": "Proyectos"
         },
         "settings": {
             "settingsButton": "Configuración",

@@ -20,6 +20,7 @@ const frontendSkills = [
     { index: 3, name: 'TailwindCSS', icon: 'img/tailwind.svg', color: 'rgba(20, 184, 166, 0.6)' },
     { index: 4, name: 'TypeScript', icon: 'img/typescript.svg', color: 'rgba(14, 165, 233, 0.6)' },
     { index: 5, name: 'JavaScript', icon: 'img/javascript.svg', color: 'rgba(249, 115, 22, 0.6)' },
+    { index: 6, name: 'StoryBook', icon: 'img/storybook.png', color: 'rgba(150, 35, 65, 0.6)' },
 ]
 
 const otherSkills = [
@@ -67,7 +68,7 @@ const nextSkills = () => {
                             <div class=" mb-8">
                                 <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-[120px] max-h-[120px] max-w-[120px]" />
                             </div>
-                            <span class="text-niel-primary-200 text-start text-lg font-light fixed bottom-0 p-2">{{
+                            <span class="text-niel-primary-200 text-start text-[16px] font-light fixed bottom-0 p-2">{{
                                 skill?.name }}</span>
                         </div>
                     </div>

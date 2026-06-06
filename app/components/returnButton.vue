@@ -5,13 +5,17 @@ function onHover() {
     playHover();
 }
 
+interface props{
+    to?: string
+}
+const props = defineProps<props>()
 </script>
 <template>
     <div @mouseenter="onHover" @click="playClick"
         class="ps-[10%]
         group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
         text-xl text-center font-light uppercase tracking-[0.5em] w-[25%] transition-colors duration-200 cursor-pointer select-none">
-        <NuxtLink to="/">
+        <NuxtLink :to="to || '/'">
             <p>{{ t('returnButton') }}</p>
         </NuxtLink>
         <div class="w-full h-0.5 mt-1 
