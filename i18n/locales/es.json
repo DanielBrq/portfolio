@@ -35,11 +35,11 @@
         }
     },
     "projects": {
+        "detailsButton": "Detalles",
         "repoMode": {
             "private": "Repositorio privado",
             "public": "Repositorio público"
         },
-        "detailsButton": "Detalles",
         "cardPreview": {
             "title": "LegacyGym",
             "description": "Aplicación para la gestión de clientes y rutinas impulsadas con IA"

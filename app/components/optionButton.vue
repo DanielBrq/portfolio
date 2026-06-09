@@ -12,9 +12,9 @@ const { playHover, playClick } = useSound();
 
 </script>
 <template>
-    <button @click="playClick()" @mouseenter="playHover()"
-        class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
-        text-xl text-center font-light uppercase tracking-[0.5em] w-[25%] transition-colors duration-200 cursor-pointer select-none">
+    <button @click="playClick()" @mouseenter="playHover()" class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
+        text-sm sm:text-base md:text-xl text-center font-light uppercase tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em]
+         w-full xl:w-[25%] transition-colors duration-200 cursor-pointer select-none py-3 md:py-0">
 
         <span>{{ label }}</span>
         <div class="w-full h-0.5 mt-1 

@@ -35,11 +35,11 @@
         }
     },
     "projects": {
+        "detailsButton": "Details",
         "repoMode": {
             "private": "Private repository",
             "public": "Public repository"
         },
-        "details": "Details",
         "cardPreview": {
             "title": "LegacyGym",
             "description": "Application for the management of clients and routines driven by AI"

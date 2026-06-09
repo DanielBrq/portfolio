@@ -17,16 +17,16 @@ const copyToClipboard = (text: string) => {
 
     <div ref="content" class="contact-page">
 
-        <div id="title" class="flex flex-col gap-1 h-full min-h-[50vh] justify-center items-center z-10 select-none">
+        <div id="title" class="flex flex-col gap-1 h-full min-h-[40vh] sm:min-h-[50vh] justify-center items-center z-10 select-none px-4">
             <div class="relative inline-flex items-center justify-center">
                 <h1 ref="nameEl" :aria-label="t('contact.title')"
-                    class="niel-gradient-w text-7xl text-center font-extralight uppercase tracking-[0.4em] leading-20 name animate-pulse-name">
+                    class="niel-gradient-w text-4xl sm:text-5xl md:text-7xl text-center font-extralight uppercase tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.4em] leading-tight md:leading-20 name animate-pulse-name">
                     {{ t('contact.title') }}
                 </h1>
             </div>
             <div class="relative inline-flex flex-col items-center justify-center group">
                 <h3 ref="jobEl" :aria-label="t('contact.subtitle')"
-                    class="text-niel-primary-100 mt-1 text-medium text-center font-light uppercase tracking-[0.5em]">
+                    class="text-niel-primary-100 mt-1 text-xs sm:text-sm md:text-medium text-center font-light uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.5em]">
                     {{ t('contact.subtitle') }}
                 </h3>
             </div>

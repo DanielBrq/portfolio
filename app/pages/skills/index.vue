@@ -56,7 +56,7 @@ const nextSkills = () => {
         </div>
 
         <div class="flex flex-col items-center gap-6 px-[5%] md:px-[10%] z-10 w-full">
-            <div class="w-full max-w-6xl flex flex-col items-center h-[50vh]">
+            <div class="w-full max-w-6xl flex flex-col items-center">
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 w-full">
                     <div v-for="(skill, index) in currentSkills" :key="skill?.name"
                         class="skill-card saturate-0 hover:saturate-150" :style="{
@@ -65,10 +65,10 @@ const nextSkills = () => {
                             '--hover-border': skill?.color?.replace(/0\.\d/, '0.8')
                         }">
                         <div class="flex flex-col items-center gap-1">
-                            <div class=" mb-8">
-                                <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-[120px] max-h-[120px] max-w-[120px]" />
+                            <div class="mb-4 sm:mb-6">
+                                <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-[70px] max-h-[70px] max-w-[70px] sm:w-[100px] sm:max-h-[100px] sm:max-w-[100px]" />
                             </div>
-                            <span class="text-niel-primary-200 text-start text-[16px] font-light fixed bottom-0 p-2">{{
+                            <span class="text-niel-primary-200 text-center text-xs sm:text-sm font-light">{{
                                 skill?.name }}</span>
                         </div>
                     </div>
@@ -77,17 +77,14 @@ const nextSkills = () => {
             <div class="flex justify-center w-full items-end">
                 <button v-on:click="nextSkills"
                     class="border border-niel-primary-100/70 rounded-lg py-1.5 px-6 cursor-pointer hover:bg-niel-primary-200/20 mt-5">
-                    <p class="text-2xl text-niel-neutral-100 hover:text-niel-primary-100">
+                    <p class="text-xl sm:text-2xl text-niel-neutral-100 hover:text-niel-primary-100">
                         {{ buttonLabel[currentListIndex] }}
                     </p>
                 </button>
             </div>
         </div>
 
-
-        <div class="flex justify-start fixed bottom-0 right-0 w-full mb-[10vh] mr-[10vh]">
-            <ReturnButton />
-        </div>
+        <ReturnButton />
     </div>
 </template>
 
@@ -96,7 +93,8 @@ const nextSkills = () => {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding-bottom: 4rem;
 }
 
 .skill-card {
