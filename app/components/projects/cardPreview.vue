@@ -21,43 +21,56 @@ const repoVisibility = computed(() => {
 
 </script>
 <template>
-    <div :class="class"
-        class="w-full rounded-xl border border-niel-primary-200/50 px-4 sm:px-[6%] md:px-[8%] py-3 hover:border-niel-primary-200/60 duration-200">
-        <div class="flex flex-col sm:grid sm:grid-cols-4 min-h-auto sm:min-h-40 gap-4 sm:gap-0 items-start sm:items-center justify-between">
-            <div class="flex flex-col gap-1 sm:col-span-3">
-                <p
-                    class="text-niel-primary-100 text-xl sm:text-2xl md:text-3xl font-sans tracking-tighter group-hover:text-niel-primary-200 duration-200">
-                    {{ title }}</p>
-                <p class="text-niel-neutral-300 text-sm sm:text-[15px] md:text-[16px] font-light tracking-tighter">{{ description }}</p>
-                <div class="flex items-center gap-2">
-                    <div class="flex items-center mt-1 border rounded-full w-fit px-3 py-0.5" :class="{
-                        'border-emerald-400 text-emerald-200': props.repositoryPrivate === false,
-                        'border-rose-400 text-rose-200': props.repositoryPrivate === true,
-                    }">
-                        <p class="font-light text-xs sm:text-sm md:text-md">{{ repoVisibility }}</p>
-                    </div>
+    <div :class="[
+        'group relative w-full overflow-hidden rounded-2xl border border-niel-secondary-800/80 bg-niel-secondary-900/30 backdrop-blur-xl transition-all duration-300 ease-out hover:border-niel-primary-500/25',
+        props.class
+    ]">
+        <div class="absolute inset-0 bg-linear-to-br from-niel-primary-500/5 via-transparent to-niel-secondary-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-30 pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-48 h-48 bg-niel-primary-500/10 blur-3xl rounded-full opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
+        <div class="relative flex flex-col h-full p-6 sm:p-8">
+
+            <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+                <h3 class="text-niel-primary-50 text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-niel-primary-300">
+                    {{ title }}
+                </h3>
+                
+                <div class="shrink-0 mt-1">
+                    <span :class="[
+                        'inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium tracking-wide border transition-all duration-300',
+                        props.repositoryPrivate 
+                            ? 'bg-rose-500/5 text-rose-300 border-rose-500/20 group-hover:border-rose-500/40 group-hover:bg-rose-500/10 group-hover:shadow-[0_0_10px_rgba(244,63,94,0.1)]' 
+                            : 'bg-emerald-500/5 text-emerald-300 border-emerald-500/20 group-hover:border-emerald-500/40 group-hover:bg-emerald-500/10 group-hover:shadow-[0_0_10px_rgba(16,185,129,0.1)]'
+                    ]">
+                        <span class="w-1.5 h-1.5 rounded-full mr-2 transition-all duration-300" :class="props.repositoryPrivate ? 'bg-rose-400 group-hover:shadow-[0_0_6px_rgba(244,63,94,0.6)]' : 'bg-emerald-400 group-hover:shadow-[0_0_6px_rgba(16,185,129,0.6)]'"></span>
+                        {{ repoVisibility }}
+                    </span>
                 </div>
             </div>
-            <div class="flex flex-row sm:flex-col gap-4 sm:gap-4 justify-start sm:items-baseline-last! h-full sm:py-[25%]">
-                <a v-if="githubUrl" :href="githubUrl" target="_blank"
-                    class="flex items-center gap-2 group hover:scale-105 duration-200">
-                    <IconGithub
-                        class="group-hover:text-niel-primary-200 transition-colors duration-200 ease-in-out size-[28px] sm:size-[32px]" />
-                    <p class="group-hover:text-niel-primary-200 transition-colors duration-200 ease-in-out text-sm sm:text-base">GitHub</p>
-                </a>
-                <a v-if="websiteUrl" :href="websiteUrl" target="_blank"
-                    class="flex items-center gap-2 group hover:scale-105 duration-200">
-                    <IconUrl
-                        class="group-hover:text-niel-primary-200 transition-colors duration-200 ease-in-out size-[28px] sm:size-[32px]" />
-                    <p class="group-hover:text-niel-primary-200 transition-colors duration-200 ease-in-out text-sm sm:text-base">Demo</p>
-                </a>
-                <nuxt-link v-if="to" :to="to" class="flex items-center gap-2 group hover:scale-105 duration-200 animate-pulse hover:animate-none">
-                    <IconFolder
-                        class="group-hover:text-niel-primary-200 transition-colors duration-200 ease-in-out size-[28px] sm:size-[32px]" />
-                    <p class="group-hover:text-niel-primary-200 transition-colors duration-200 ease-in-out text-sm sm:text-base">
-                        {{ $t("projects.detailsButton") }}</p>
-                </nuxt-link>
 
+            <p class="text-niel-neutral-300/80 text-sm sm:text-[15px] font-light leading-relaxed mb-8 grow">
+                {{ description }}
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 sm:gap-6 mt-auto pt-5 border-t border-niel-secondary-700/50">
+                <a v-if="githubUrl" :href="githubUrl" target="_blank"
+                    class="group/btn flex items-center gap-2 text-niel-neutral-400 hover:text-niel-primary-300 transition-all duration-300 hover:-translate-y-0.3">
+                    <IconGithub class="size-5 sm:size-6 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:-rotate-3" />
+                    <span class="text-sm sm:text-base font-medium">GitHub</span>
+                </a>
+                
+                <a v-if="websiteUrl" :href="websiteUrl" target="_blank"
+                    class="group/btn flex items-center gap-2 text-niel-neutral-400 hover:text-niel-primary-300 transition-all duration-300 hover:-translate-y-0.3">
+                    <IconUrl class="size-5 sm:size-6 transition-transform duration-300 group-hover/btn:scale-110 group-hover/btn:rotate-3" />
+                    <span class="text-sm sm:text-base font-medium">Demo</span>
+                </a>
+                
+                <div class="grow"></div>
+                <nuxt-link v-if="to" :to="to" 
+                    class="group/link flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-niel-secondary-800/40 text-niel-primary-200 border border-niel-secondary-700/60 transition-all duration-300 hover:bg-niel-primary-500/10 hover:border-niel-primary-500/30 hover:shadow-[0_0_20px_rgba(248,187,132,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    <span class="text-sm sm:text-base font-medium tracking-wide">{{ $t("projects.detailsButton") }}</span>
+                    <IconFolder class="size-4 sm:size-5 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:text-niel-primary-300" />
+                </nuxt-link>
             </div>
         </div>
     </div>

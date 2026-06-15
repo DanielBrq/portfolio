@@ -61,7 +61,6 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         "workbox-window",
-        // "@vueuse/core", //enable when mobile responsive
         'gsap',
         'gsap/ScrollTrigger',
       ],
