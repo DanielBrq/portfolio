@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
   nitro: {
-    preset: "bun",
     routeRules: {
       '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
       '/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
@@ -28,6 +27,9 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: false },
   modules: ['@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image'],
+  image: {
+    provider: 'vercel'
+  },
   pinia: {
     storesDirs: ["stores"],
   },
