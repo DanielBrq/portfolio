@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     client: false,
     server: false,
   },
-  ssr: false,
+  ssr: true,
   devtools: { enabled: false },
   modules: ['@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image'],
   image: {
