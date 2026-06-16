@@ -72,7 +72,7 @@
                 "li3_desc": " Each day (table) has an exercise (row).",
                 "li4": "Exercise and equipment:",
                 "li4_desc": " are selectable catalog objects, not 'hardcoded', since the AI generation feature needs to call the exercise list (filtered).",
-                "p2": "I didn't consider using the JSONB property of PostgreSQL, which would have facilitated some things and is worth exploring in the future. I also didn't use pgVector because I didn't know it existed; it would have been a good idea for semantic searches simulating a mini RAG architecture.",
+                "p2": "I didn't consider using the JSONB property of PostgreSQL, which would have facilitated some things and is worth exploring in the future. I also didn't use pgVector because I didn't know it existed; it would have been a good idea for semantic searches simulating a mini RAG architecture. I also applied transactions for these nested operations.",
                 "p3": "When the AI proposal is generated, it is saved in another type of draft with Pinia, and when the user confirms the routine, it overwrites the base routine. If they decide not to save it, it is discarded. This prevents the base routine from being overwritten without confirmation."
             },
             "aiFlow": {

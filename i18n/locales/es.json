@@ -72,7 +72,7 @@
                 "li3_desc": " Cada día (tabla) tiene un ejercicio (row).",
                 "li4": "Ejercicio y equipamiento:",
                 "li4_desc": " son objetos de catálogo seleccionables y no 'hardcoded' ya que en la feature de generación con IA necesita llamar la lista de ejercicios (filtrado).",
-                "p2": "No tomé en cuenta usar la propiedad JSONB de PostgreSQL, eso hubiera facilitado ciertas cosas y vale la pena explorarlo a futuro. Tampoco usé pgVector porque no sabía que existía; hubiera sido buena idea para búsquedas semánticas simulando una mini arquitectura RAG.",
+                "p2": "No tomé en cuenta usar la propiedad JSONB de PostgreSQL, eso hubiera facilitado ciertas cosas y vale la pena explorarlo a futuro. Tampoco usé pgVector porque no sabía que existía; hubiera sido buena idea para búsquedas semánticas simulando una mini arquitectura RAG. Igualmente apliqué transacciones para estas operaciones con anidación.",
                 "p3": "Cuando se genera la propuesta por IA, se guarda en otro tipo de borrador con Pinia, y cuando el usuario confirma la rutina, esta sobreescribe la rutina base. Si decide no guardarla, se descarta. Esto evita que se sobreescriba la rutina base sin confirmación."
             },
             "aiFlow": {
