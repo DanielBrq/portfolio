@@ -43,6 +43,48 @@
         "cardPreview": {
             "title": "LegacyGym",
             "description": "Application for the management of clients and routines driven by AI"
+        },
+        "legacyGym": {
+            "description": "LegacyGym is a web application for managing gym workout routines, with an emphasis on creating personalized training plans based on user goals and conditions. This application is designed to work without AI. AI is implemented to help the trainer generate a good baseline for the personalized user routine, reducing planning time by 30%.",
+            "planning": {
+                "title": "Planning",
+                "p1": "I designed the schema and basic modules needed for the project, which are:",
+                "li1": "Authentication",
+                "li1_desc": " and user accounts.",
+                "li2": "Clients",
+                "li2_desc": ": Basic data, physical conditions, and illnesses.",
+                "li3": "Exercises and equipment",
+                "li3_desc": ": Repertoire of available exercises and equipment for selection and AI routine generation.",
+                "li4": "Routines",
+                "li4_desc": ": Personalized training plans (manual or AI-generated).",
+                "p2": "I used Nuxt (Vue full-stack framework) as the base framework. Personally, I consider Vue a better alternative to React because you can do the same with less code and complexity. I use Nuxt because it facilitates auto imports of composables, components, and routes, plus it offers useful plugins.",
+                "p3": "Nuxt runs on the Nitro engine and uses a backend called H3. Initially, I had problems configuring it; probably next time I'll try using Hono, which is considered more stable.",
+                "p4": "Finally, for data persistence, I used PostgreSQL through the Drizzle ORM. I had issues with migrations, so I think I prefer PrismaORM for next time, although in implementation they feel similar."
+            },
+            "routines": {
+                "title": "Routine Generation",
+                "p1": "For routine creation, it is first composed in local memory using Pinia to build a 'draft'. When finished, it is sent to the backend to be saved in the database. In the backend, this operation was complicated because it was an insertion with many nested layers:",
+                "li1": "Routine:",
+                "li1_desc": " A routine has days (e.g., upper body, lower body -> two days).",
+                "li2": "Day:",
+                "li2_desc": " A day has a list of exercises (previously registered catalog).",
+                "li3": "DayExcersice:",
+                "li3_desc": " Each day (table) has an exercise (row).",
+                "li4": "Exercise and equipment:",
+                "li4_desc": " are selectable catalog objects, not 'hardcoded', since the AI generation feature needs to call the exercise list (filtered).",
+                "p2": "I didn't consider using the JSONB property of PostgreSQL, which would have facilitated some things and is worth exploring in the future. I also didn't use pgVector because I didn't know it existed; it would have been a good idea for semantic searches simulating a mini RAG architecture.",
+                "p3": "When the AI proposal is generated, it is saved in another type of draft with Pinia, and when the user confirms the routine, it overwrites the base routine. If they decide not to save it, it is discarded. This prevents the base routine from being overwritten without confirmation."
+            },
+            "aiFlow": {
+                "title": "AI Routine Generation Flow",
+                "p1": "In this stage, we focused on integrating an AI-based recommendation engine. The goal is for each user to receive a training plan adapted to their goals based on their weekly progress.",
+                "p2": "It uses a simple intent pattern where the necessary exercises are obtained with an SQL query, avoiding saturating the token input with the full list of exercises. Relevant user data and the history of the last routine are also sent."
+            },
+            "deployment": {
+                "title": "Deployment",
+                "p1": "The deployment was done on a VPS using Ubuntu Server and Dokploy to facilitate the deployment of the application and the database. Ports were closed except for the necessary ones, and SSH was configured.",
+                "p2": "The application is exposed to the internet through Cloudflare Tunnels, and the database is kept internal (not exposed to the internet)."
+            }
         }
     },
     "home": {

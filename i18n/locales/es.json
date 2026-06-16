@@ -43,6 +43,48 @@
         "cardPreview": {
             "title": "LegacyGym",
             "description": "Aplicación para la gestión de clientes y rutinas impulsadas con IA"
+        },
+        "legacyGym": {
+            "description": "LegacyGym es una aplicación web para la gestión de rutinas de ejercicios en un gimnasio, con énfasis en la creación de planes de entrenamiento personalizados basados en los objetivos y condiciones del usuario. Esta aplicación está pensada para funcionar sin IA. La IA está implementada para ayudar al entrenador a generar una buena base para la rutina del usuario personalizada reduciendo un 30% el tiempo de planificación.",
+            "planning": {
+                "title": "Planificación",
+                "p1": "Diseñé el esquema y módulos necesarios base del proyecto, los cuales son:",
+                "li1": "Autenticación",
+                "li1_desc": " y cuentas de usuarios.",
+                "li2": "Clientes",
+                "li2_desc": ": Datos básicos, condiciones físicas y enfermedades.",
+                "li3": "Ejercicios y equipamiento",
+                "li3_desc": ": Repertorio de ejercicios y equipamiento disponible para selección y generación de rutinas IA.",
+                "li4": "Rutinas",
+                "li4_desc": ": Planes de entrenamiento personalizados (manuales o mediante IA).",
+                "p2": "Usé Nuxt (framework full-stack de Vue) como framework base. Personalmente Vue lo considero la mejor alternativa a React porque puedes hacer lo mismo con menos código y complejidad. Uso Nuxt porque facilita auto imports de composables, componentes y rutas, además de ofrecer plugins útiles.",
+                "p3": "Nuxt corre sobre el motor Nitro y este usa un backend llamado H3. Inicialmente tuve problemas al configurarlo; probablemente la próxima vez intente usar Hono, que es considerado más estable.",
+                "p4": "Finalmente, para la persistencia de datos usé PostgreSQL a través del ORM Drizzle. Tuve problemas con migraciones, en ese sentido prefiero PrismaORM para la próxima vez, aunque en implementación los siento similares."
+            },
+            "routines": {
+                "title": "Generación de rutinas",
+                "p1": "Para la creación de rutinas, esta se compone primero en memoria local usando Pinia para armar el 'borrador'. Cuando se termina, se envía al backend para ser guardada en la base de datos. En backend, esta operación fue complicada porque era inserción con muchas capas de anidación:",
+                "li1": "Routine:",
+                "li1_desc": " Una rutina tiene días (ej: tren superior, tren inferior -> dos días).",
+                "li2": "Day:",
+                "li2_desc": " Un día tiene lista de ejercicios (catálogo previamente registrado).",
+                "li3": "DayExcersice:",
+                "li3_desc": " Cada día (tabla) tiene un ejercicio (row).",
+                "li4": "Ejercicio y equipamiento:",
+                "li4_desc": " son objetos de catálogo seleccionables y no 'hardcoded' ya que en la feature de generación con IA necesita llamar la lista de ejercicios (filtrado).",
+                "p2": "No tomé en cuenta usar la propiedad JSONB de PostgreSQL, eso hubiera facilitado ciertas cosas y vale la pena explorarlo a futuro. Tampoco usé pgVector porque no sabía que existía; hubiera sido buena idea para búsquedas semánticas simulando una mini arquitectura RAG.",
+                "p3": "Cuando se genera la propuesta por IA, se guarda en otro tipo de borrador con Pinia, y cuando el usuario confirma la rutina, esta sobreescribe la rutina base. Si decide no guardarla, se descarta. Esto evita que se sobreescriba la rutina base sin confirmación."
+            },
+            "aiFlow": {
+                "title": "Flujo de generación de rutinas con IA",
+                "p1": "En esta etapa nos enfocamos en integrar un motor de recomendaciones basado en IA. El objetivo es que cada usuario reciba un plan de entrenamiento adaptado a sus metas basándose en su progreso semanal.",
+                "p2": "Usa un patrón intent simple donde se obtienen los ejercicios necesarios con una llamada SQL evitando saturar el input de tokens con la lista completa de ejercicios. También se le envían datos relevantes del usuario e historial de la última rutina."
+            },
+            "deployment": {
+                "title": "Despliegue",
+                "p1": "El despliegue lo realicé con un VPS usando Ubuntu Server y Dokploy para facilitar el despliegue de la aplicación y la base de datos. Se cerraron los puertos excepto los necesarios, y se configuró SSH.",
+                "p2": "La aplicación se expone a internet a través de Cloudflare Tunnels y la base de datos internamente (no expuesta a internet)."
+            }
         }
     },
     "home": {

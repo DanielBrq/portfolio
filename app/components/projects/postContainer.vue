@@ -1,6 +1,5 @@
 <script setup lang="ts">
 defineProps<{
-    id: string,
     title: string,
     date?: string,
 }>()
@@ -8,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-    <article class="flex flex-col gap-4 border-l-2 border-niel-primary-200/50 pl-4 sm:pl-6 py-4 relative group">
+    <article class="flex flex-col gap-4 border-l-2 border-niel-primary-200/50 pl-4 sm:pl-6 py-4 relative group bg-niel-secondary-900/30 rounded-r-4xl pe-4">
         <div
             class="absolute left-[-9px] top-6 w-4 h-4 rounded-full bg-niel-primary-200 group-hover:shadow-[0_0_10px_rgba(var(--color-niel-primary-200),0.8)] transition-shadow duration-300">
         </div>

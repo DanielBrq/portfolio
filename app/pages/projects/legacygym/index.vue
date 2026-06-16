@@ -1,41 +1,113 @@
 <script setup lang="ts">
 
+const { t } = useI18n();
+
 </script>
 <template>
-    <div class="w-screen min-h-[80vh] overflow-y-auto scrollbar-none px-4 sm:px-[8%] md:px-[10%] lg:px-[20%] py-10">
-        <section class="max-w-4xl mx-auto flex flex-col gap-12 pb-32">
+    <div
+        class="w-screen min-h-[80vh] overflow-y-auto scrollbar-none px-4 sm:px-[6%] md:px-[10%] lg:px-[15%] py-12 text-app-text">
+        <section class="max-w-4xl mx-auto flex flex-col gap-14 pb-32">
 
-            <div class="mb-6 sm:mb-10">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-5 text-niel-primary-200">Legacy Gym</h1>
-                <div class="text-niel-neutral-300 flex flex-col gap-3 text-sm sm:text-base md:text-lg">
-                    <p>LegacyGym es una aplicación web y móvil diseñada para la gestión integral de gimnasios, con un enfoque particular en el acompañamiento y optimización del rendimiento físico de los usuarios a través de herramientas de inteligencia artificial.</p>
-                    <p>El proyecto nace de la necesidad de ofrecer una experiencia más personalizada y eficiente tanto para el administrador del gimnasio como para el cliente final.</p>
+            <div class="space-y-4">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-niel-primary-300">
+                    Legacy Gym
+                </h1>
+                <div
+                    class="text-niel-neutral-200/90 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                    <p>{{ $t("projects.legacyGym.description") }}</p>
                 </div>
             </div>
 
-            <div class="flex flex-col gap-10">
-                <ProjectsPostContainer id="post-3" title="Implementación de IA para rutinas" date="Octubre 2023">
-                    <p>En esta etapa nos enfocamos en integrar un motor de recomendaciones basado en IA. El objetivo es que cada usuario reciba un plan de entrenamiento adaptado a sus metas basándose en su progreso semanal.</p>
-                    <div class="bg-niel-primary-200/10 border border-niel-primary-200/20 p-6 rounded-lg my-4 flex items-center justify-center text-niel-primary-100 min-h-[200px]">
-                        [Mock: Diagrama Arquitectura IA]
+            <div class="flex flex-col gap-12">
+                <ProjectsPostContainer :title="$t('projects.legacyGym.planning.title')" date="2026">
+                    <div
+                        class="space-y-6 text-niel-neutral-200/95 font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        <p>{{ $t("projects.legacyGym.planning.p1") }}</p>
+
+                        <ul class="list-disc pl-6 space-y-3 marker:text-niel-primary-400">
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.planning.li1") }}</b>{{
+                                $t("projects.legacyGym.planning.li1_desc") }}</li>
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.planning.li2") }}</b>{{
+                                $t("projects.legacyGym.planning.li2_desc") }}</li>
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.planning.li3") }}</b>{{
+                                $t("projects.legacyGym.planning.li3_desc") }}</li>
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.planning.li4") }}</b>{{
+                                $t("projects.legacyGym.planning.li4_desc") }}</li>
+                        </ul>
+
+                        <div class="flex flex-wrap gap-4 py-4 opacity-90">
+                            <NuxtImg src="/img/nuxt.svg"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-md" />
+                            <NuxtImg src="/img/vue.png"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-md" />
+                            <NuxtImg src="/img/tailwind.svg"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-md" />
+                            <NuxtImg src="/img/typescript.svg"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-md" />
+                            <NuxtImg src="/img/postgresql.svg"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-md" />
+                        </div>
+
+                        <p>{{ $t("projects.legacyGym.planning.p2") }}</p>
+                        <p>{{ $t("projects.legacyGym.planning.p3") }}</p>
+                        <p>{{ $t("projects.legacyGym.planning.p4") }}</p>
                     </div>
-                    <p>Resultados positivos, reduciendo el tiempo de planificación para entrenadores en un 60%.</p>
                 </ProjectsPostContainer>
 
-                <ProjectsPostContainer id="post-2" title="Desarrollo App Móvil" date="Agosto 2023">
-                    <p>Iniciamos desarrollo móvil con React Native. La app permite a usuarios ver rutinas, registrar marcas y escanear QR.</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
-                        <div class="aspect-video bg-niel-primary-200/10 border border-niel-primary-200/20 rounded-lg flex items-center justify-center text-niel-primary-100">[Mock: App Pantalla 1]</div>
-                        <div class="aspect-video bg-niel-primary-200/10 border border-niel-primary-200/20 rounded-lg flex items-center justify-center text-niel-primary-100">[Mock: App Pantalla 2]</div>
+                <ProjectsPostContainer :title="$t('projects.legacyGym.routines.title')" date="2026">
+                    <div
+                        class="space-y-6 text-niel-neutral-200/95 font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        <p>{{ $t("projects.legacyGym.routines.p1") }}</p>
+
+                        <ul class="list-disc pl-6 space-y-3 marker:text-niel-primary-400">
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.routines.li1") }}</b>{{
+                                $t("projects.legacyGym.routines.li1_desc") }}</li>
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.routines.li2") }}</b>{{
+                                $t("projects.legacyGym.routines.li2_desc") }}</li>
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.routines.li3") }}</b>{{
+                                $t("projects.legacyGym.routines.li3_desc") }}</li>
+                            <li><b class="text-white font-medium">{{ $t("projects.legacyGym.routines.li4") }}</b>{{
+                                $t("projects.legacyGym.routines.li4_desc") }}</li>
+                        </ul>
+
+                        <p>{{ $t("projects.legacyGym.routines.p2") }}</p>
+                        <p>{{ $t("projects.legacyGym.routines.p3") }}</p>
                     </div>
                 </ProjectsPostContainer>
 
-                <ProjectsPostContainer id="post-1" title="Inicio: Dashboard Web" date="Junio 2023">
-                    <p>Desarrollo del panel web administrativo. Dueños de gimnasios pueden gestionar membresías, ingresos y pagos recurrentes.</p>
-                    <p>Utilizamos Nuxt 3 y PostgreSQL, garantizando rendimiento y escalabilidad.</p>
+                <ProjectsPostContainer :title="$t('projects.legacyGym.aiFlow.title')" date="2026">
+                    <div
+                        class="space-y-6 text-niel-neutral-200/95 font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        <p>{{ $t("projects.legacyGym.aiFlow.p1") }}</p>
+
+                        <div
+                            class="bg-niel-secondary-900/50rounded-2xl p-6 my-6 shadow-inner flex items-center justify-center min-h-[240px] hover:border-niel-primary-500/30 transition-colors duration-500">
+                            <NuxtImg src="/diagrams/legacy-gym-architecture.svg"
+                                class="w-full h-full object-contain drop-shadow-lg" />
+                        </div>
+
+                        <p>{{ $t("projects.legacyGym.aiFlow.p2") }}</p>
+                    </div>
                 </ProjectsPostContainer>
+
+                <ProjectsPostContainer :title="$t('projects.legacyGym.deployment.title')" date="2026">
+                    <div
+                        class="space-y-6 text-niel-neutral-200/95 font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        <p>{{ $t("projects.legacyGym.deployment.p1") }}</p>
+                        <p>{{ $t("projects.legacyGym.deployment.p2") }}</p>
+
+                        <div class="flex flex-wrap gap-5 pt-4 opacity-90">
+                            <NuxtImg src="/img/cloudflare.png"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:-translate-y-1 transition-transform duration-300 drop-shadow-md" />
+                            <NuxtImg src="/img/dokploy.png"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:-translate-y-1 transition-transform duration-300 drop-shadow-md" />
+                            <NuxtImg src="/img/github.png"
+                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:-translate-y-1 transition-transform duration-300 drop-shadow-md" />
+                        </div>
+                    </div>
+                </ProjectsPostContainer>
+
             </div>
-
         </section>
     </div>
     <ReturnButton to="/projects" />
