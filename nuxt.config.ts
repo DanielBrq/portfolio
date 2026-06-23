@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   },
   ssr: true,
   devtools: { enabled: false },
-  modules: ['@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image'],
+  modules: ['@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', '@vercel/analytics'],
   image: {
     provider: 'vercel'
   },
