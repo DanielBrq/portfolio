@@ -44,6 +44,17 @@
             "title": "LegacyGym",
             "description": "Application for the management of clients and routines driven by AI"
         },
+        "portfolio": {
+            "title": "My Portfolio",
+            "description": "My professional portfolio to showcase my experience and projects.",
+            "premise": {
+                "title": "Premise",
+                "date": "June 2026",
+                "p1": "It is this exact one you are seeing. I thought of doing it under the premise of making it like a video game interface, with a 16:9 format screen and interactivity. Although I made certain pages as a waterfall which is precisely what I was trying to avoid, but of course I will be constantly improving this portfolio.",
+                "p2": "Once again I used Nuxt as a framework for the frontend. It always helps me to do the frontend as quickly as possible due to its characteristics that allow good DX.",
+                "p3": "You may have noticed that it has sound, certain animations with GSAP, for the target aesthetics, there is still much to improve because my idea is to avoid the waterfall format and improve animations, which with GSAP is more difficult than I thought."
+            }
+        },
         "legacyGym": {
             "description": "LegacyGym is a web application for managing gym workout routines, with an emphasis on creating personalized training plans based on user goals and conditions. This application is designed to work without AI. AI is implemented to help the trainer generate a good baseline for the personalized user routine, reducing planning time by 30%.",
             "planning": {

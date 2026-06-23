@@ -44,6 +44,17 @@
             "title": "LegacyGym",
             "description": "Aplicación para la gestión de clientes y rutinas impulsadas con IA"
         },
+        "portfolio": {
+            "title": "Mi Portafolio",
+            "description": "Mi portfolio profesional para dar a conocer mi experiencia y proyectos.",
+            "premise": {
+                "title": "Premisa",
+                "date": "Junio 2026",
+                "p1": "Es este mismo que estás viendo, pensé hacerlo bajo la premisa de hacerlo como interfaz de videjuego, con pantalla en formato 16:9 e interactividad. Aunque ciertas paginas las hice en cascada que es precisamente lo que intentaba evitar, pero por supuesto este portafolio lo estaré mejorando constantemente.",
+                "p2": "Una vez más usé Nuxt como framework para el frontend. Siempre me ayuda a hacer el frontend lo mas rápido posible por sus caracteristicas que permiten buen DX.",
+                "p3": "Habrás notado que tiene sonido, ciertas animaciones con GSAP, por la estetica objetivo, aún hay mucho por mejorar porque mi idea es evitar el formato cascada y mejorar animaciones, cosa que con GSAP es mas dificil de lo que pensaba."
+            }
+        },
         "legacyGym": {
             "description": "LegacyGym es una aplicación web para la gestión de rutinas de ejercicios en un gimnasio, con énfasis en la creación de planes de entrenamiento personalizados basados en los objetivos y condiciones del usuario. Esta aplicación está pensada para funcionar sin IA. La IA está implementada para ayudar al entrenador a generar una buena base para la rutina del usuario personalizada reduciendo un 30% el tiempo de planificación.",
             "planning": {

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 
-const { t } = useI18n();
-
 </script>
 <template>
     <div
@@ -87,23 +85,6 @@ const { t } = useI18n();
                         </div>
 
                         <p>{{ $t("projects.legacyGym.aiFlow.p2") }}</p>
-                    </div>
-                </ProjectsPostContainer>
-
-                <ProjectsPostContainer :title="$t('projects.legacyGym.deployment.title')" date="2026">
-                    <div
-                        class="space-y-6 text-niel-neutral-200/95 font-light leading-relaxed text-[15px] sm:text-[17px]">
-                        <p>{{ $t("projects.legacyGym.deployment.p1") }}</p>
-                        <p>{{ $t("projects.legacyGym.deployment.p2") }}</p>
-
-                        <div class="flex flex-wrap gap-5 pt-4 opacity-90">
-                            <NuxtImg src="/img/cloudflare.png"
-                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:-translate-y-1 transition-transform duration-300 drop-shadow-md" />
-                            <NuxtImg src="/img/dokploy.png"
-                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:-translate-y-1 transition-transform duration-300 drop-shadow-md" />
-                            <NuxtImg src="/img/github.png"
-                                class="w-14 h-14 sm:w-16 sm:h-16 object-contain hover:-translate-y-1 transition-transform duration-300 drop-shadow-md" />
-                        </div>
                     </div>
                 </ProjectsPostContainer>
 
