@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
   nitro: {
-    preset: "node-server",
     routeRules: {
       '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
       '/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
