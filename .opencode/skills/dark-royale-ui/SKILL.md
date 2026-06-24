@@ -24,7 +24,7 @@ description: >-
 | Base bg | `#06090e` | `bg-niel-secondary-900` / `bg-[#06090e]` |
 | Card bg | `#0c111a` | `bg-niel-secondary-600` / `bg-[#0c111a]` |
 | Silver accent | `#d1d5db` | `text-niel-neutral-300` / `border-niel-neutral-300` / `bg-silver` |
-| Body text | `#8b949e` | `text-[#8b949e]` / `text-app-text-muted` |
+| Body text | `#8b949e` | `text-app-text-muted` / `text-app-text-muted` |
 | Gold detail | `#c5a880` | `text-niel-primary-400` / `border-[#c5a880]` / `bg-gold` |
 | Red detail | `#f87171` | `text-niel-red-400` / `border-niel-red-400` |
 | Heading font | Cinzel | `font-serif` |
@@ -49,7 +49,7 @@ Apply color with restraint — the UI is **modern dark** first, accent second.
 <!-- ✅ Balanced: silver borders, gold on hero heading only -->
 <div class="bg-[#0c111a] border border-white/5 p-8 rounded-sm">
   <h1 class="font-serif text-niel-primary-400 text-4xl">Royal Title</h1>
-  <p class="text-[#8b949e]">Standard body text in silver tones.</p>
+  <p class="text-app-text-muted">Standard body text in silver tones.</p>
 </div>
 
 <!-- ❌ Overdone: too much gold destroys the effect -->
@@ -112,11 +112,11 @@ On hover, the border transitions to silver with a silver glow by default. Reserv
 
 - **All H1, H2, H3**: `font-serif font-light uppercase tracking-[0.15em]`
 - Use `text-niel-primary-200` or `text-[#c5a880]` for heading color
-- **Body text**: Inter 300, color `text-[#8b949e]` or `text-niel-neutral-300`
+- **Body text**: Inter 300, color `text-app-text-muted` or `text-niel-neutral-300`
 
 ```html
 <h1 class="font-serif font-light uppercase tracking-[0.15em] text-niel-primary-200 text-4xl">Title</h1>
-<p class="text-[#8b949e] font-light text-base">Body copy here.</p>
+<p class="text-app-text-muted font-light text-base">Body copy here.</p>
 ```
 
 ### 4. Metallic hover

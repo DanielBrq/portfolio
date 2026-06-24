@@ -68,7 +68,7 @@ const nextSkills = () => {
                             <div class="mb-4 sm:mb-6">
                                 <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-[70px] max-h-[70px] max-w-[70px] sm:w-[100px] sm:max-h-[100px] sm:max-w-[100px]" />
                             </div>
-                            <span class="text-[#8b949e] text-center text-xs sm:text-sm font-light">{{
+                            <span class="text-app-text-muted text-center text-xs sm:text-sm font-light">{{
                                 skill?.name }}</span>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ const nextSkills = () => {
             <div class="flex justify-center w-full items-end">
                 <button v-on:click="nextSkills"
                     class="border border-white/5 rounded-sm py-2 px-8 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] mt-6">
-                    <p class="text-xl sm:text-2xl text-[#8b949e] font-light hover:text-niel-primary-200">
+                    <p class="text-xl sm:text-2xl text-app-text-muted font-light hover:text-niel-primary-200">
                         {{ buttonLabel[currentListIndex] }}
                     </p>
                 </button>

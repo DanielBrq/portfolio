@@ -49,7 +49,7 @@ const repoVisibility = computed(() => {
                     </div>
                 </div>
 
-                <p class="text-[#8b949e] text-sm sm:text-[15px] font-light leading-relaxed mb-10 grow">
+                <p class="text-app-text-muted text-sm sm:text-[15px] font-light leading-relaxed mb-10 grow">
                     {{ description }}
                 </p>
 

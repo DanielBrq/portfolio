@@ -11,7 +11,7 @@
                     Legacy Gym
                 </h1>
                 <div
-                    class="text-[#8b949e] text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                    class="text-app-text-muted text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-3xl">
                     <p>{{ $t("projects.legacyGym.description") }}</p>
                 </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="flex flex-col gap-12">
                 <ProjectsPostContainer :title="$t('projects.legacyGym.planning.title')" date="2026">
                     <div
-                        class="space-y-6 text-[#8b949e] font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        class="space-y-6 text-app-text-muted font-light leading-relaxed text-[15px] sm:text-[17px]">
                         <p>{{ $t("projects.legacyGym.planning.p1") }}</p>
 
                         <ul class="list-disc pl-6 space-y-3 marker:text-niel-primary-400">
@@ -54,7 +54,7 @@
 
                 <ProjectsPostContainer :title="$t('projects.legacyGym.routines.title')" date="2026">
                     <div
-                        class="space-y-6 text-[#8b949e] font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        class="space-y-6 text-app-text-muted font-light leading-relaxed text-[15px] sm:text-[17px]">
                         <p>{{ $t("projects.legacyGym.routines.p1") }}</p>
 
                         <ul class="list-disc pl-6 space-y-3 marker:text-niel-primary-400">
@@ -75,7 +75,7 @@
 
                 <ProjectsPostContainer :title="$t('projects.legacyGym.aiFlow.title')" date="2026">
                     <div
-                        class="space-y-6 text-[#8b949e] font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        class="space-y-6 text-app-text-muted font-light leading-relaxed text-[15px] sm:text-[17px]">
                         <p>{{ $t("projects.legacyGym.aiFlow.p1") }}</p>
 
                         <div

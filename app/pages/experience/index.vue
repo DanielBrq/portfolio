@@ -11,7 +11,7 @@ const { t } = useI18n();
                     <p class="font-serif font-light uppercase tracking-[0.15em] text-lg sm:text-xl md:text-2xl text-niel-primary-200 flex items-center gap-2 select-none">
                         <IconUser class="w-[28px] h-[28px] md:w-[32px] md:h-[32px] shrink-0" /> {{ t("experience.details.aboutMe.title") }}
                     </p>
-                    <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-[#8b949e] font-light select-none">
+                    <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-app-text-muted font-light select-none">
                         {{ t("experience.details.aboutMe.description") }}
                     </p>
                 </div>
@@ -20,7 +20,7 @@ const { t } = useI18n();
                         <IconSchool class="w-[28px] h-[28px] md:w-[32px] md:h-[32px] shrink-0 select-none" />
                         {{ t("experience.details.aboutMe.universityTitle") }}
                     </p>
-                    <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-[#8b949e] font-light select-none">
+                    <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-app-text-muted font-light select-none">
                         {{ t("experience.details.aboutMe.universitySubtitle") }}</p>
                     <p class="text-sm text-pretty text-niel-neutral-400 select-none">2022 - 2026</p>
                     <p class="text-sm text-pretty text-niel-neutral-400 select-none">
@@ -38,7 +38,7 @@ const { t } = useI18n();
                                 <p
                                     class="font-serif font-light uppercase tracking-[0.15em] text-lg sm:text-xl md:text-2xl text-niel-primary-200 flex items-center gap-2 select-none">
                                     Factor-k Software</p>
-                                <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-[#8b949e] font-light select-none">
+                                <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-app-text-muted font-light select-none">
                                     {{ t("experience.experience.factorK.subtitle") }}</p>
                                 <p class="text-sm text-pretty text-niel-neutral-400 select-none">
                                     {{ t("experience.experience.factorK.period") }}</p>
@@ -59,12 +59,12 @@ const { t } = useI18n();
                         </div>
                     </div>
                     <div class="flex flex-col justify-start gap-4 px-4">
-                        <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-[#8b949e] font-light select-none">
+                        <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-app-text-muted font-light select-none">
                             {{ t("experience.experience.factorK.description") }}</p>
                         <div class="ms-2 border-l-2 border-niel-primary-200/50 pl-[14px] mb-4">
                             <ul class="list-disc flex flex-col gap-3">
-                                <li v-for="n in 9" :key="n" class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-[#8b949e] font-light">
-                                    <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-[#8b949e] font-light hover:text-niel-primary-200/80 select-none">
+                                <li v-for="n in 9" :key="n" class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-app-text-muted font-light">
+                                    <p class="text-sm sm:text-[15px] md:text-[16px] text-pretty text-app-text-muted font-light hover:text-niel-primary-200/80 select-none">
                                         {{ t(`experience.experience.factorK.achievements.item_${n}`) }}
                                     </p>
                                 </li>

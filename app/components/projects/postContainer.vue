@@ -14,10 +14,10 @@ defineProps<{
 
         <header class="flex flex-col gap-1">
             <h2 class="text-lg sm:text-xl md:text-2xl font-light uppercase tracking-[0.15em] text-niel-primary-200 font-serif">{{ title }}</h2>
-            <time v-if="date" class="text-xs sm:text-sm text-[#8b949e]/60 font-light">{{ date }}</time>
+            <time v-if="date" class="text-xs sm:text-sm text-app-text-muted/60 font-light">{{ date }}</time>
         </header>
 
-        <div class="text-[#8b949e] font-light leading-relaxed flex flex-col gap-4 text-sm sm:text-base">
+        <div class="text-app-text-muted font-light leading-relaxed flex flex-col gap-4 text-sm sm:text-base">
             <slot />
         </div>
 

@@ -11,7 +11,7 @@
                     {{ $t("projects.portfolio.title") }}
                 </h1>
                 <div
-                    class="text-[#8b949e] text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                    class="text-app-text-muted text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-3xl">
                     <p>{{ $t("projects.portfolio.description") }}</p>
                 </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="flex flex-col gap-12">
                 <ProjectsPostContainer :title="$t('projects.portfolio.premise.title')" :date="$t('projects.portfolio.premise.date')">
                     <div
-                        class="space-y-6 text-[#8b949e] font-light leading-relaxed text-[15px] sm:text-[17px]">
+                        class="space-y-6 text-app-text-muted font-light leading-relaxed text-[15px] sm:text-[17px]">
                         <p>{{ $t("projects.portfolio.premise.p1") }}</p>
 
                         <div class="flex flex-wrap gap-4 py-4 opacity-90">
