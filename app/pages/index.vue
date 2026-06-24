@@ -1,22 +1,71 @@
 <script lang="ts" setup>
-import { useHomeGsap } from '~/composables/home/gsap';
+import { ref, onMounted } from 'vue';
+import { useGsap } from '~/composables/useGsap';
+import { useSound } from '~/composables/useSound';
 import OptionButton from '~/components/optionButton.vue';
 
 const { t } = useI18n();
 
 useHead({ title: t('home.header') });
 
-const {
-    topBar,
-    bottomBar,
-    content,
-    nameEl,
-    jobEl,
-    nameCursorEl,
-    jobCursorEl,
-    navEl,
-    startLeaveAnimation
-} = useHomeGsap(t);
+const content = ref<HTMLElement | null>(null);
+const nameEl = ref<HTMLElement | null>(null);
+const jobEl = ref<HTMLElement | null>(null);
+const nameCursorEl = ref<HTMLElement | null>(null);
+const jobCursorEl = ref<HTMLElement | null>(null);
+const navEl = ref<HTMLElement | null>(null);
+
+const { typewriter, blinkCursor, killCursor, staggerFadeIn, fadeSlideIn, slideUpOut } = useGsap();
+const { playType, stopType } = useSound();
+
+onMounted(() => {
+    if (content.value) {
+        fadeSlideIn(content.value);
+    }
+
+    if (nameCursorEl.value) {
+        blinkCursor(nameCursorEl.value);
+    }
+
+    playType();
+
+    if (nameEl.value) {
+        typewriter(nameEl.value, 'Daniel Barquero Cabrera', {
+            onComplete: () => {
+                if (nameCursorEl.value) {
+                    killCursor(nameCursorEl.value);
+                }
+                if (jobCursorEl.value) {
+                    blinkCursor(jobCursorEl.value);
+                }
+                if (jobEl.value) {
+                    typewriter(jobEl.value, t('home.job'), {
+                        onComplete: () => {
+                            stopType();
+                            if (jobCursorEl.value) {
+                                killCursor(jobCursorEl.value);
+                            }
+                        }
+                    });
+                } else {
+                    stopType();
+                }
+            }
+        });
+    } else {
+        stopType();
+    }
+
+    if (navEl.value) {
+        staggerFadeIn(navEl.value, '.nav-button', { delay: 1.0 });
+    }
+});
+
+function startLeaveAnimation() {
+    if (content.value) {
+        slideUpOut(content.value);
+    }
+}
 
 defineExpose({ startLeaveAnimation });
 </script>
@@ -48,11 +97,12 @@ defineExpose({ startLeaveAnimation });
                     </div>
                 </div>
                 <nav ref="navEl"
-                    class="flex flex-row desktop:flex-col justify-center desktop:items-end gap-6 desktop:gap-8 mb-[10vh] desktop:mb-0 z-10">
-                    <OptionButton :label="t('home.options.experience')" @click="startLeaveAnimation('/experience')" />
-                    <OptionButton :label="t('home.options.projects')" @click="startLeaveAnimation('/projects')" />
-                    <OptionButton :label="t('home.options.skills')" @click="startLeaveAnimation('/skills')" />
-                    <OptionButton :label="t('home.options.contact')" @click="startLeaveAnimation('/contact')" />
+                    class="flex flex-row desktop:flex-col desktop:items-end gap-6 desktop:gap-8 mb-[10vh] desktop:mb-0 z-10">
+                    <OptionButton :label="t('home.options.experience')" @click="startLeaveAnimation()"
+                        to="/experience" />
+                    <OptionButton :label="t('home.options.projects')" @click="startLeaveAnimation()" to="/projects" />
+                    <OptionButton :label="t('home.options.skills')" @click="startLeaveAnimation()" to="/skills" />
+                    <OptionButton :label="t('home.options.contact')" @click="startLeaveAnimation()" to="/contact" />
                 </nav>
             </div>
         </div>
