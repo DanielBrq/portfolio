@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -9,9 +9,8 @@
     --breakpoint-desktop: 1280px;
 
     /* Fonts */
-    --font-sans:
-        "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: "Cinzel", serif;
 
     /* Font Sizes */
     --font-size-xs: 0.75rem;
@@ -40,47 +39,21 @@
     --line-height-8xl: 1;
     --font-size-9xl: 8rem;
     --line-height-9xl: 1;
-    /* Colors */
+    /* Colors — 50/30/20 hierarchy */
 
-    /* primary */
-    --color-niel-primary-50: #fff7ed;
-    --color-niel-primary-100: #ffedd5;
-    --color-niel-primary-200: #fed7aa;
-    --color-niel-primary-300: #f0bf8b;
-    --color-niel-primary-400: #f8b570;
-    --color-niel-primary-500: #f8bb84;
-    --color-niel-primary-600: #f8c497;
-    --color-niel-primary-700: #f27a4a;
-    --color-niel-primary-800: #d95a30;
-    --color-niel-primary-900: #bd4018;
-    --color-niel-primary-950: #9e2912;
+    /* 🖤 50% — Foundation: obsidian deep blues */
+    --color-niel-secondary-100: #1e2533;
+    --color-niel-secondary-200: #1a202e;
+    --color-niel-secondary-300: #161c28;
+    --color-niel-secondary-400: #121822;
+    --color-niel-secondary-500: #0e141c;
+    --color-niel-secondary-600: #0c111a;
+    --color-niel-secondary-700: #0a0e16;
+    --color-niel-secondary-800: #080c12;
+    --color-niel-secondary-900: #06090e;
+    --color-niel-secondary-950: #04060a;
 
-    /* secondary */
-    --color-niel-secondary-100: #ede9fe;
-    --color-niel-secondary-200: #ddd6fe;
-    --color-niel-secondary-300: #c4b5fd;
-    --color-niel-secondary-400: #a78bfa;
-    --color-niel-secondary-500: #8b5cf6;
-    --color-niel-secondary-600: #4b4978;
-    --color-niel-secondary-700: #484b69;
-    --color-niel-secondary-800: #363954;
-    --color-niel-secondary-900: #24283f;
-    --color-niel-secondary-950: #181b2a;
-
-
-    /* Warning */
-    --color-niel-warning-100: #f6d09f;
-    --color-niel-warning-200: #f6b47f;
-    --color-niel-warning-300: #f69f67;
-    --color-niel-warning-400: #f68443;
-    --color-niel-warning-500: #f66119;
-    --color-niel-warning-600: #e6560f;
-    --color-niel-warning-700: #c4450d;
-    --color-niel-warning-800: #9a2e0b;
-    --color-niel-warning-900: #7c2609;
-    --color-niel-warning-950: #5e1d07;
-
-    /* Neutral */
+    /* 🩶 30% — Silver accent: borders, text, hovers */
     --color-niel-neutral-50: #f9fafb;
     --color-niel-neutral-100: #f3f4f6;
     --color-niel-neutral-200: #e5e7eb;
@@ -93,12 +66,55 @@
     --color-niel-neutral-900: #111827;
     --color-niel-neutral-950: #030712;
 
-    /* --- SYSTEM PALETTE (REACTIVE) --- */
-    --color-app-bg: #363959;
+    /* ✨ 20% — Royal details */
+    /* gold — hero headings, primary CTAs */
+    --color-niel-primary-50: #faf6ef;
+    --color-niel-primary-100: #f0e4cc;
+    --color-niel-primary-200: #e0cba0;
+    --color-niel-primary-300: #d0b580;
+    --color-niel-primary-400: #c5a880;
+    --color-niel-primary-500: #b89460;
+    --color-niel-primary-600: #a07d50;
+    --color-niel-primary-700: #876840;
+    --color-niel-primary-800: #6e5330;
+    --color-niel-primary-900: #553e20;
+    --color-niel-primary-950: #3c2a10;
+
+    /* red — badges, emphasis, private indicators */
+    --color-niel-red-50: #fef2f2;
+    --color-niel-red-100: #fee2e2;
+    --color-niel-red-200: #fecaca;
+    --color-niel-red-300: #fca5a5;
+    --color-niel-red-400: #f87171;
+    --color-niel-red-500: #ef4444;
+    --color-niel-red-600: #dc2626;
+    --color-niel-red-700: #b91c1c;
+    --color-niel-red-800: #991b1b;
+    --color-niel-red-900: #7f1d1d;
+    --color-niel-red-950: #450a0a;
+
+    /* Warning (kept for actual warnings) */
+    --color-niel-warning-100: #f6d09f;
+    --color-niel-warning-200: #f6b47f;
+    --color-niel-warning-300: #f69f67;
+    --color-niel-warning-400: #f68443;
+    --color-niel-warning-500: #f66119;
+    --color-niel-warning-600: #e6560f;
+    --color-niel-warning-700: #c4450d;
+    --color-niel-warning-800: #9a2e0b;
+    --color-niel-warning-900: #7c2609;
+    --color-niel-warning-950: #5e1d07;
+
+    /* --- SYSTEM PALETTE --- */
+    --color-app-bg: #06090e;
     --color-app-text: #f9fafb;
-    --color-app-text-muted: #d1d5db;
-    --color-app-border: #393959;
-    --color-app-surface: #111827;
+    --color-app-text-muted: #8b949e;
+    --color-app-border: #d1d5db;
+    --color-app-surface: #0c111a;
+
+    /* Semantic aliases */
+    --color-silver: #d1d5db;
+    --color-gold: #c5a880;
 }
 
 @layer base {
@@ -112,15 +128,15 @@
     }
 
     body {
-        font-family: "Google Sans Flex", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background-color: #0a0a0f;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-weight: 300;
+        background-color: #06090e;
         background-image:
-            url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
             radial-gradient(circle at 50% 50%,
-                rgba(42, 44, 69, 0.20) 0%,
-                rgba(28, 30, 48, 0.45) 25%,
-                rgba(17, 18, 30, 0.72) 55%,
-                rgba(10, 10, 15, 1.00) 100%);
+                rgba(12, 17, 26, 0.60) 0%,
+                rgba(8, 12, 18, 0.80) 50%,
+                rgba(6, 9, 14, 1.00) 100%);
         background-attachment: fixed;
         background-size: 256px 256px, cover;
     }
@@ -131,29 +147,49 @@
     }
 }
 
-/* Gradients */
+/* Gradients — silver default, gold for hero */
+
 .niel-gradient-h {
     background: linear-gradient(to top,
-            var(--color-niel-primary-600),
-            var(--color-niel-primary-300));
+            var(--color-niel-neutral-500),
+            var(--color-niel-neutral-300),
+            var(--color-niel-neutral-400));
     @apply bg-clip-text text-transparent transition-all duration-300;
 }
 
 .niel-gradient-w {
     background: linear-gradient(to right,
-            var(--color-niel-primary-600),
-            var(--color-niel-primary-300));
+            var(--color-niel-neutral-500),
+            var(--color-niel-neutral-400),
+            var(--color-niel-neutral-500));
     @apply bg-clip-text text-transparent transition-all duration-300;
 }
 
-/* Typing cursor */
+.niel-gradient-gold-h {
+    background: linear-gradient(to top,
+            var(--color-niel-primary-400),
+            var(--color-niel-primary-300),
+            var(--color-niel-primary-500));
+    @apply bg-clip-text text-transparent transition-all duration-300;
+}
+
+.niel-gradient-gold-w {
+    background: linear-gradient(to right,
+            var(--color-niel-primary-500),
+            var(--color-niel-primary-300),
+            var(--color-niel-primary-500));
+    @apply bg-clip-text text-transparent transition-all duration-300;
+}
+
+/* Typing cursor — silver by default */
 .typing-cursor {
     display: inline-block;
     margin-left: 2px;
     will-change: opacity;
     background: linear-gradient(to right,
-            var(--color-niel-primary-600),
-            var(--color-niel-primary-300));
+            var(--color-niel-neutral-500),
+            var(--color-niel-neutral-300),
+            var(--color-niel-neutral-500));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -49,7 +49,7 @@ const nextSkills = () => {
             class="flex flex-col gap-1 h-full min-h-[25vh] justify-center items-center z-10 select-none pt-[2vh]">
             <div class="relative inline-flex items-center justify-center">
                 <h1 ref="nameEl" :aria-label="t('home.options.skills')"
-                    class="niel-gradient-w text-4xl md:text-6xl text-center font-extralight uppercase tracking-[0.4em] leading-20 name animate-pulse-name">
+                    class="niel-gradient-w text-4xl md:text-6xl text-center font-light uppercase tracking-[0.15em] leading-20 font-serif animate-pulse-name">
                     {{ t('home.options.skills') }}
                 </h1>
             </div>
@@ -68,7 +68,7 @@ const nextSkills = () => {
                             <div class="mb-4 sm:mb-6">
                                 <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-[70px] max-h-[70px] max-w-[70px] sm:w-[100px] sm:max-h-[100px] sm:max-w-[100px]" />
                             </div>
-                            <span class="text-niel-primary-200 text-center text-xs sm:text-sm font-light">{{
+                            <span class="text-[#8b949e] text-center text-xs sm:text-sm font-light">{{
                                 skill?.name }}</span>
                         </div>
                     </div>
@@ -76,8 +76,8 @@ const nextSkills = () => {
             </div>
             <div class="flex justify-center w-full items-end">
                 <button v-on:click="nextSkills"
-                    class="border border-niel-primary-100/70 rounded-lg py-1.5 px-6 cursor-pointer hover:bg-niel-primary-200/20 mt-5">
-                    <p class="text-xl sm:text-2xl text-niel-neutral-100 hover:text-niel-primary-100">
+                    class="border border-white/5 rounded-sm py-2 px-8 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] mt-6">
+                    <p class="text-xl sm:text-2xl text-[#8b949e] font-light hover:text-niel-primary-200">
                         {{ buttonLabel[currentListIndex] }}
                     </p>
                 </button>
@@ -102,11 +102,11 @@ const nextSkills = () => {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.25rem;
     color: var(--niel-primary-100, #f5f5f5);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid #fed7aa50;
-    border-radius: 0.5rem;
+    background: rgba(12, 17, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
     cursor: default;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -115,10 +115,10 @@ const nextSkills = () => {
 }
 
 .skill-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--hover-border);
+    background: rgba(12, 17, 26, 0.95);
+    border-color: #c5a880;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px var(--hover-color);
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
 }
 
 .skill-card:hover .skill-icon-wrapper img {

@@ -20,20 +20,20 @@ const copyToClipboard = (text: string) => {
         <div id="title" class="flex flex-col gap-1 h-full min-h-[40vh] sm:min-h-[50vh] justify-center items-center z-10 select-none px-4">
             <div class="relative inline-flex items-center justify-center">
                 <h1 ref="nameEl" :aria-label="t('contact.title')"
-                    class="niel-gradient-w text-4xl sm:text-5xl md:text-7xl text-center font-extralight uppercase tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.4em] leading-tight md:leading-20 name animate-pulse-name">
+                    class="niel-gradient-w text-4xl sm:text-5xl md:text-7xl text-center font-light uppercase tracking-[0.15em] sm:tracking-[0.25em] md:tracking-[0.4em] leading-tight md:leading-20 font-serif animate-pulse-name">
                     {{ t('contact.title') }}
                 </h1>
             </div>
             <div class="relative inline-flex flex-col items-center justify-center group">
                 <h3 ref="jobEl" :aria-label="t('contact.subtitle')"
-                    class="text-niel-primary-100 mt-1 text-xs sm:text-sm md:text-medium text-center font-light uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.5em]">
+                    class="text-niel-primary-200 mt-1 text-xs sm:text-sm md:text-medium text-center font-light uppercase tracking-[0.25em] sm:tracking-[0.35em] md:tracking-[0.5em] font-serif">
                     {{ t('contact.subtitle') }}
                 </h3>
             </div>
         </div>
 
         <nav ref="navEl" class="flex flex-col items-center gap-3 px-[10%] md:px-[20%] mb-[8vh] z-10">
-            <div class="contact-card hover:border-niel-primary-200/50!"
+            <div class="contact-card"
                 :aria-label="t('contact.options.email')">
                 <div class="contact-icon-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
@@ -65,7 +65,7 @@ const copyToClipboard = (text: string) => {
             </div>
 
             <a href="https://www.linkedin.com/in/danielbrq/" target="_blank" rel="noopener noreferrer"
-                class="contact-card hover:border-niel-primary-200/50!" :aria-label="t('contact.options.linkedin')">
+                class="contact-card" :aria-label="t('contact.options.linkedin')">
                 <div class="contact-icon-wrapper">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -85,7 +85,7 @@ const copyToClipboard = (text: string) => {
             </a>
 
             <a href="https://github.com/DanielBrq/DanielBrq" target="_blank" rel="noopener noreferrer"
-                class="contact-card hover:border-niel-primary-200/50!" :aria-label="t('contact.options.github')">
+                class="contact-card" :aria-label="t('contact.options.github')">
                 <div class="contact-icon-wrapper">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -123,14 +123,14 @@ const copyToClipboard = (text: string) => {
     max-height: 5rem;
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
     width: 100%;
     max-width: 36rem;
-    padding: 1.1rem 1.5rem;
+    padding: 1.25rem 1.75rem;
     color: var(--niel-primary-100, #f5f5f5);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.5rem;
+    background: rgba(12, 17, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
     text-decoration: none;
     cursor: pointer;
     backdrop-filter: blur(8px);
@@ -152,10 +152,10 @@ const copyToClipboard = (text: string) => {
 }
 
 .contact-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(12, 17, 26, 0.95);
+    border-color: #c5a880;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
 }
 
 .contact-card:focus-visible {

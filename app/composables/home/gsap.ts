@@ -25,7 +25,7 @@ export function useHomeGsap(t: any) {
 
     onMounted(() => {
 
-        const fullName = 'Daniel Barquero Cabrera';
+        const fullName = 'Daniel Barquero';
         const fullJob = t('home.job');
         const nameCharDuration = 0.03;
         const jobCharDuration = nameCharDuration + 0.2 / fullJob.length;
