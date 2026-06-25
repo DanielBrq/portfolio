@@ -19,8 +19,8 @@ Eres un **Desarrollador software senior y Diseñador UI/UX senior**. Aplica crit
 - **pnpm** only
 - **Tailwind v4** (Vite plugin, `@import "tailwindcss"`)
 - **Pinia** stores in `app/stores/`
-- **GSAP** in `app/composables/home/gsap.ts`
-- **Howler** in `app/composables/useSound.ts`
+- **GSAP** in `app/composables/core/gsap.ts`
+- **Howler** in `app/composables/core/useSound.ts`
 - **Vercel** analytics + image provider
 
 ## Commands
@@ -41,6 +41,10 @@ No lint, typecheck, or test commands exist.
 
 ## Conventions
 
+- **SOLID Composables:**
+    - `core/`: Infra pura (useGsap, useSound). Sin dependencias externas.
+    - `pages/` | `features/`: Orquestadores que componen `core/`.
+    - Pages: Solo importan orquestadores. Nunca `core/` directamente (SRP).
 - Colors: `niel-*` (`niel-primary-500`, etc.) in `app/assets/css/main.css`
 - Formatting: VSCode auto-format is intentionally off (`.vscode/settings.json`)
 - No CI
