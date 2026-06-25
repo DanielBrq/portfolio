@@ -7,19 +7,19 @@
         <section class="max-w-4xl mx-auto flex flex-col gap-14 pb-32">
 
             <div class="space-y-4">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.15em] text-niel-primary-200 font-serif">
+                <h1
+                    class="text-3xl sm:text-4xl md:text-5xl font-light uppercase tracking-[0.15em] text-niel-primary-200 font-serif">
                     {{ $t("projects.portfolio.title") }}
                 </h1>
-                <div
-                    class="text-app-text-muted text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                <div class="text-app-text-muted text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-3xl">
                     <p>{{ $t("projects.portfolio.description") }}</p>
                 </div>
             </div>
 
             <div class="flex flex-col gap-12">
-                <ProjectsPostContainer :title="$t('projects.portfolio.premise.title')" :date="$t('projects.portfolio.premise.date')">
-                    <div
-                        class="space-y-6 text-app-text-muted font-light leading-relaxed text-[15px] sm:text-[17px]">
+                <ProjectsPostContainer :title="$t('projects.portfolio.premise.title')"
+                    :date="$t('projects.portfolio.premise.date')">
+                    <div class="space-y-6 text-app-text-muted font-light leading-relaxed text-[15px] sm:text-[17px]">
                         <p>{{ $t("projects.portfolio.premise.p1") }}</p>
 
                         <div class="flex flex-wrap gap-4 py-4 opacity-90">

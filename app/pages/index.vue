@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useGsap } from '~/composables/useGsap';
 import { useSound } from '~/composables/useSound';
 import OptionButton from '~/components/optionButton.vue';
@@ -14,11 +14,12 @@ const jobEl = ref<HTMLElement | null>(null);
 const nameCursorEl = ref<HTMLElement | null>(null);
 const jobCursorEl = ref<HTMLElement | null>(null);
 const navEl = ref<HTMLElement | null>(null);
+const settingsWrapper = ref<HTMLElement | null>(null);
 
-const { typewriter, blinkCursor, killCursor, staggerFadeIn, fadeSlideIn, slideUpOut } = useGsap();
+const { typewriter, blinkCursor, killCursor, staggerFadeIn, fadeSlideIn, slideUpOut, killAll } = useGsap();
 const { playType, stopType } = useSound();
 
-onMounted(() => {
+function runEntranceAnimations() {
     if (content.value) {
         fadeSlideIn(content.value);
     }
@@ -30,7 +31,7 @@ onMounted(() => {
     playType();
 
     if (nameEl.value) {
-        typewriter(nameEl.value, 'Daniel Barquero Cabrera', {
+        typewriter(nameEl.value, 'Daniel Barquero C.', {
             onComplete: () => {
                 if (nameCursorEl.value) {
                     killCursor(nameCursorEl.value);
@@ -57,13 +58,32 @@ onMounted(() => {
     }
 
     if (navEl.value) {
-        staggerFadeIn(navEl.value, '.nav-button', { delay: 1.0 });
+        staggerFadeIn(navEl.value, '.nav-button', { delay: 0.8 });
     }
+}
+
+function onPageShow(event: PageTransitionEvent) {
+    if (event.persisted) {
+        killAll();
+        runEntranceAnimations();
+    }
+}
+
+onMounted(() => {
+    runEntranceAnimations();
+    window.addEventListener('pageshow', onPageShow);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('pageshow', onPageShow);
 });
 
 function startLeaveAnimation() {
     if (content.value) {
         slideUpOut(content.value);
+    }
+    if (settingsWrapper.value) {
+        slideUpOut(settingsWrapper.value);
     }
 }
 
@@ -72,7 +92,9 @@ defineExpose({ startLeaveAnimation });
 
 <template>
     <section class="w-screen h-dvh scrollbar-none overscroll-y-none relative overflow-hidden">
-        <HomeSettings />
+        <div ref="settingsWrapper">
+            <HomeSettings />
+        </div>
         <div ref="content" class="w-full h-full">
             <div class="niel-gradient"></div>
             <div

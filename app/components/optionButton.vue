@@ -5,14 +5,26 @@ const { label } = defineProps({
     label: {
         type: String,
         required: true
+    },
+    to: {
+        type: String,
+        required: true
     }
 });
 
+const emit = defineEmits(['click']);
+
 const { playHover, playClick } = useSound();
+
+function handleClick(event: MouseEvent) {
+    playClick();
+    emit('click', event);
+}
 
 </script>
 <template>
-    <button @click="playClick()" @mouseenter="playHover()" class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
+    <button @click="handleClick($event); navigateTo(to)" @mouseenter="playHover()"
+        class="nav-button group flex flex-col items-start justify-center text-niel-neutral-400 hover:text-niel-primary-400
         text-sm sm:text-base md:text-xl desktop:text-2xl text-center font-light uppercase tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em] desktop:tracking-[0.4em]
          w-full transition-colors duration-200 cursor-pointer select-none py-3 md:py-0">
 
@@ -25,10 +37,3 @@ const { playHover, playClick } = useSound();
         </div>
     </button>
 </template>
-
-<style scoped>
-.nav-button {
-    opacity: 0;
-    transform: translateY(14px);
-}
-</style>

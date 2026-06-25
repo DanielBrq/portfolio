@@ -16,6 +16,10 @@ export default defineNuxtConfig({
     }
   },
   app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+    },
     head: {
       link: [{ rel: "preload", as: "script", href: "/_nuxt/entry.js" }],
     },

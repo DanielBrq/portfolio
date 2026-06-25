@@ -16,5 +16,5 @@ const { t } = useI18n();
 
         </section>
     </div>
-    <ReturnButton />
+    <ReturnButton to="/" />
 </template>

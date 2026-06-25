@@ -53,8 +53,8 @@ export function useGsap() {
     const { duration = 0.5, stagger = 0.08, delay = 0 } = opts
     const children = container.querySelectorAll(selector)
     if (!children.length) return null
-    const t = gsap.to(children, {
-      opacity: 1, y: 0,
+    const t = gsap.from(children, {
+      opacity: 0, y: 14,
       duration, ease: 'power2.out', stagger, delay,
     })
     tweens.push(t)
@@ -63,8 +63,7 @@ export function useGsap() {
 
   function fadeSlideIn(el: HTMLElement, opts: { duration?: number; fromY?: number; ease?: string } = {}) {
     const { duration = 0.7, fromY = 20, ease = 'power2.out' } = opts
-    gsap.set(el, { opacity: 0, y: fromY })
-    const t = gsap.to(el, { opacity: 1, y: 0, duration, ease })
+    const t = gsap.from(el, { opacity: 0, y: fromY, duration, ease })
     tweens.push(t)
     return t
   }

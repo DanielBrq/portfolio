@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import gsap from 'gsap';
 import { useSound } from '~/composables/useSound';
 
 const { t } = useI18n();
@@ -8,6 +9,7 @@ function onHover() {
     playHover();
 }
 
+const rootEl = ref<HTMLElement | null>(null);
 const showSettingsOnHover = ref(false);
 const showConfigButton = ref(true);
 
@@ -20,9 +22,15 @@ function onMouseLeave() {
     showConfigButton.value = true;
     showSettingsOnHover.value = false;
 }
+
+onMounted(() => {
+    if (rootEl.value) {
+        gsap.from(rootEl.value, { opacity: 0, y: 10, duration: 0.5, delay: 1.2, ease: 'power2.out' });
+    }
+});
 </script>
 <template>
-    <div class="fixed bottom-22 right-8 backdrop-blur-md border-none text-white transition duration-200 z-50">
+    <div ref="rootEl" class="fixed bottom-22 right-8 backdrop-blur-md border-none text-white transition duration-200 z-50">
 
         <div v-if="showConfigButton" @mouseenter="onMouseEnter">
             <button ref="navEl"
