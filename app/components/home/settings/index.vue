@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import gsap from 'gsap';
-import { useSound } from '~/composables/useSound';
+import { useSound } from '~/composables/core/useSound';
 
 const { t } = useI18n();
 const { playHover } = useSound();
@@ -25,21 +25,31 @@ function onMouseLeave() {
 
 onMounted(() => {
     if (rootEl.value) {
-        gsap.from(rootEl.value, { opacity: 0, y: 10, duration: 0.5, delay: 1.2, ease: 'power2.out' });
+        gsap.fromTo(rootEl.value,
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.5, delay: 1.2, ease: 'power2.out', immediateRender: true }
+        );
     }
 });
 </script>
 <template>
-    <div ref="rootEl" class="fixed bottom-22 right-8 backdrop-blur-md border-none text-white transition duration-200 z-50">
+    <div ref="rootEl" class="fixed bottom-8 right-8 text-white z-50 opacity-0">
 
         <div v-if="showConfigButton" @mouseenter="onMouseEnter">
-            <button ref="navEl"
-                class="group items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
-            text-base text-center font-light uppercase tracking-widest transition-all duration-300 cursor-pointer select-none border border-transparent hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] rounded-sm px-3 py-1">
+            <button
+                class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
+                text-sm sm:text-base md:text-xl desktop:text-2xl text-center font-light uppercase tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em] desktop:tracking-[0.4em]
+                transition-colors duration-200 cursor-pointer select-none">
                 <span>{{ t('home.settings.settingsButton') }}</span>
+                <div class="w-full h-0.5 mt-1
+                 bg-linear-to-r from-transparent via-niel-primary-400 to-transparent
+                 scale-x-[0.15] opacity-0
+                 group-hover:scale-x-130 group-hover:opacity-100
+                 transition-all duration-500 ease-in-out origin-center">
+                </div>
             </button>
         </div>
-        <div class="flex flex-col items-end gap-1" v-else="showSettingsOnHover" @mouseleave="onMouseLeave">
+        <div class="flex flex-col items-start gap-3 mt-2" v-else="showSettingsOnHover" @mouseleave="onMouseLeave">
             <HomeSettingsLanguage />
             <HomeSettingsMusic />
         </div>

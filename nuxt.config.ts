@@ -4,7 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   experimental: {
-    viewTransition: true,
     payloadExtraction: true,
     componentIslands: true,
   },
@@ -16,10 +15,6 @@ export default defineNuxtConfig({
     }
   },
   app: {
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
-    },
     head: {
       link: [{ rel: "preload", as: "script", href: "/_nuxt/entry.js" }],
     },

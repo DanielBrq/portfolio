@@ -1,16 +1,17 @@
 <script lang="ts" setup>
+import { useSound } from '~/composables/core/useSound';
+
 const { t } = useI18n()
 const { playHover, playClick } = useSound();
-const router = useRouter();
 
 interface props{
     to?: string
 }
-const props = withDefaults(defineProps<props>(), { to: undefined })
+const props = withDefaults(defineProps<props>(), { to: '/' })
 
 function onClick() {
     playClick();
-    router.push(props.to || '/')
+    navigateTo(props.to || '/')
 }
 </script>
 <template>

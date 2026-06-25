@@ -1,5 +1,5 @@
 <template>
-    <main class="w-dvw h-dvh overflow-hidden">
+    <main class="w-dvw h-dvh max-h-dvh! overflow-hidden">
         <slot />
     </main>
 </template>
