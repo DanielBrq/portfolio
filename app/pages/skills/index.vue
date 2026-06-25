@@ -44,102 +44,31 @@ const nextSkills = () => {
 }
 </script>
 <template>
-    <div ref="content" class="skills-page">
-        <div id="title"
-            class="flex flex-col gap-1 h-full min-h-[25vh] justify-center items-center z-10 select-none pt-[2vh]">
-            <div class="relative inline-flex items-center justify-center">
-                <h1 ref="nameEl" :aria-label="t('home.options.skills')"
-                    class="niel-gradient-w text-4xl md:text-6xl text-center font-light uppercase tracking-[0.15em] leading-20 font-serif animate-pulse-name">
-                    {{ t('home.options.skills') }}
-                </h1>
-            </div>
+    <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center p-4">
+        <div class="flex flex-col gap-1 z-10 select-none items-center">
+            <h1 class="text-6xl font-serif font-light uppercase tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
+                {{ t('home.options.skills') }}
+            </h1>
         </div>
 
-        <div class="flex flex-col items-center gap-6 px-[5%] md:px-[10%] z-10 w-full">
-            <div class="w-full max-w-6xl flex flex-col items-center">
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 w-full">
-                    <div v-for="(skill, index) in currentSkills" :key="skill?.name"
-                        class="skill-card saturate-0 hover:saturate-150" :style="{
-                            animationDelay: `${index * 0.05}s`,
-                            '--hover-color': skill?.color,
-                            '--hover-border': skill?.color?.replace(/0\.\d/, '0.8')
-                        }">
-                        <div class="flex flex-col items-center gap-1">
-                            <div class="mb-4 sm:mb-6">
-                                <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-[70px] max-h-[70px] max-w-[70px] sm:w-[100px] sm:max-h-[100px] sm:max-w-[100px]" />
-                            </div>
-                            <span class="text-app-text-muted text-center text-xs sm:text-sm font-light">{{
-                                skill?.name }}</span>
-                        </div>
+        <div class="flex flex-col items-center gap-6 z-10 w-full max-w-5xl mt-12">
+            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 w-full">
+                <div v-for="(skill, index) in currentSkills" :key="skill?.name"
+                    class="group flex flex-col items-center gap-4 p-4 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] animate-card-in cursor-default"
+                    :style="{ animationDelay: `${index * 0.05}s` }">
+                    <div class="w-16 h-16 flex items-center justify-center saturate-0 transition-all duration-300 group-hover:saturate-100">
+                        <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-full h-full object-contain" />
                     </div>
+                    <span class="text-app-text-muted text-xs font-light tracking-[0.05em] uppercase">{{ skill?.name }}</span>
                 </div>
             </div>
-            <div class="flex justify-center w-full items-end">
-                <button v-on:click="nextSkills"
-                    class="border border-white/5 rounded-sm py-2 px-8 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] mt-6">
-                    <p class="text-xl sm:text-2xl text-app-text-muted font-light hover:text-niel-primary-200">
-                        {{ buttonLabel[currentListIndex] }}
-                    </p>
-                </button>
-            </div>
+            
+            <button @click="nextSkills"
+                class="border border-white/5 rounded-sm py-3 px-10 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-app-text-muted hover:text-niel-primary-200 uppercase tracking-[0.2em] text-lg font-light">
+                {{ buttonLabel[currentListIndex] }}
+            </button>
         </div>
 
         <ReturnButton />
     </div>
 </template>
-
-<style scoped>
-.skills-page {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    padding-bottom: 4rem;
-}
-
-.skill-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem 1.25rem;
-    color: var(--niel-primary-100, #f5f5f5);
-    background: rgba(12, 17, 26, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2px;
-    cursor: default;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: cardIn 0.5s ease-out backwards;
-}
-
-.skill-card:hover {
-    background: rgba(12, 17, 26, 0.95);
-    border-color: #c5a880;
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
-}
-
-.skill-card:hover .skill-icon-wrapper img {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.1);
-}
-
-.skill-text {
-    display: flex;
-    align-items: center;
-}
-
-@keyframes cardIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-</style>
