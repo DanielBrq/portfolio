@@ -23,9 +23,8 @@ function handleClick(event: MouseEvent) {
 
 </script>
 <template>
-    <button @click="handleClick($event)" @mouseenter="playHover()"
-        class="nav-button group flex flex-col items-start justify-center text-niel-neutral-400 hover:text-niel-primary-400
-        text-sm sm:text-base md:text-xl desktop:text-2xl text-center font-light uppercase tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em] desktop:tracking-[0.4em]
+    <button @click="handleClick($event)" @mouseenter="playHover()" class="nav-button group flex flex-col items-start justify-center text-niel-neutral-400 hover:text-niel-primary-400
+        text-sm sm:text-base md:text-2xl text-center font-light uppercase tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.35em] 
          w-full transition-colors duration-200 cursor-pointer select-none py-3 md:py-0">
 
         <span>{{ label }}</span>

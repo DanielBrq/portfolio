@@ -36,9 +36,8 @@ onMounted(() => {
     <div ref="rootEl" class="fixed bottom-8 right-8 text-white z-50 opacity-0">
 
         <div v-if="showConfigButton" @mouseenter="onMouseEnter">
-            <button
-                class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
-                text-sm sm:text-base md:text-xl desktop:text-2xl text-center font-light uppercase tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em] desktop:tracking-[0.4em]
+            <button class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400
+                text-sm sm:text-base md:text-lg desktop:text-xl text-center font-light uppercase tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em] desktop:tracking-[0.4em]
                 transition-colors duration-200 cursor-pointer select-none">
                 <span>{{ t('home.settings.settingsButton') }}</span>
                 <div class="w-full h-0.5 mt-1

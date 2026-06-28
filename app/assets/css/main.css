@@ -68,17 +68,17 @@
 
     /* ✨ 20% — Royal details */
     /* gold — hero headings, primary CTAs */
-    --color-niel-primary-50: #faf6ef;
-    --color-niel-primary-100: #f0e4cc;
-    --color-niel-primary-200: #e0cba0;
-    --color-niel-primary-300: #d0b580;
-    --color-niel-primary-400: #c5a880;
-    --color-niel-primary-500: #b89460;
-    --color-niel-primary-600: #a07d50;
-    --color-niel-primary-700: #876840;
-    --color-niel-primary-800: #6e5330;
-    --color-niel-primary-900: #553e20;
-    --color-niel-primary-950: #3c2a10;
+    --color-niel-primary-50: #fdf8ef;
+    --color-niel-primary-100: #f8eccf;
+    --color-niel-primary-200: #edd9a2;
+    --color-niel-primary-300: #e2c47a;
+    --color-niel-primary-400: #d4b068;
+    --color-niel-primary-500: #c49c50;
+    --color-niel-primary-600: #a88440;
+    --color-niel-primary-700: #8c6c30;
+    --color-niel-primary-800: #705420;
+    --color-niel-primary-900: #543c10;
+    --color-niel-primary-950: #382408;
 
     /* red — badges, emphasis, private indicators */
     --color-niel-red-50: #fef2f2;
@@ -114,7 +114,7 @@
 
     /* Semantic aliases */
     --color-silver: #d1d5db;
-    --color-gold: #c5a880;
+    --color-gold: #d4b068;
 }
 
 @layer base {
@@ -198,36 +198,43 @@
 }
 
 .page-enter-active {
-  transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .page-enter-from {
-  opacity: 0;
-  transform: translateX(30px);
+    opacity: 0;
+    transform: translateX(30px);
 }
 
 .page-enter-to {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .page-leave-active {
-  transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .page-leave-from {
-  opacity: 1;
-  transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .page-leave-to {
-  opacity: 0;
-  transform: translateX(-30px);
+    opacity: 0;
+    transform: translateX(-30px);
 }
 
 @keyframes card-in {
-    from { opacity: 0; transform: translateY(15px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-card-in {
