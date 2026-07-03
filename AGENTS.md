@@ -25,12 +25,12 @@ Eres un **Desarrollador software senior y Diseñador UI/UX senior**. Aplica crit
 
 ## Commands
 
-| Command | What |
-|---------|------|
-| `pnpm dev` | Dev server :3000 |
-| `pnpm build` | Production build |
-| `pnpm generate` | Static export |
-| `pnpm preview` | Preview build |
+| Command         | What             |
+| --------------- | ---------------- |
+| `pnpm dev`      | Dev server :3000 |
+| `pnpm build`    | Production build |
+| `pnpm generate` | Static export    |
+| `pnpm preview`  | Preview build    |
 
 No lint, typecheck, or test commands exist.
 
@@ -42,9 +42,9 @@ No lint, typecheck, or test commands exist.
 ## Conventions
 
 - **SOLID Composables:**
-    - `core/`: Infra pura (useGsap, useSound). Sin dependencias externas.
-    - `pages/` | `features/`: Orquestadores que componen `core/`.
-    - Pages: Solo importan orquestadores. Nunca `core/` directamente (SRP).
+  - `core/`: Infra pura (useGsap, useSound). Sin dependencias externas.
+  - `pages/` | `features/`: Orquestadores que componen `core/`.
+  - Pages: Solo importan orquestadores. Nunca `core/` directamente (SRP).
 - Colors: `niel-*` (`niel-primary-500`, etc.) in `app/assets/css/main.css`
 - Formatting: VSCode auto-format is intentionally off (`.vscode/settings.json`)
 - No CI

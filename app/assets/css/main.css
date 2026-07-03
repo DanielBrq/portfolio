@@ -1,242 +1,264 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+@import 'tailwindcss';
 
 @theme {
-    /* Breakpoints */
-    --breakpoint-mobile: 425px;
-    --breakpoint-tablet: 744px;
-    --breakpoint-desktop: 1280px;
+  /* Breakpoints */
+  --breakpoint-mobile: 425px;
+  --breakpoint-tablet: 744px;
+  --breakpoint-desktop: 1280px;
 
-    /* Fonts */
-    --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-serif: "Cinzel", serif;
+  /* Fonts */
+  --font-sans:
+    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-serif: 'Cinzel', serif;
 
-    /* Font Sizes */
-    --font-size-xs: 0.75rem;
-    --line-height-xs: 1rem;
-    --font-size-sm: 0.875rem;
-    --line-height-sm: 1.25rem;
-    --font-size-base: 1rem;
-    --line-height-base: 1.5rem;
-    --font-size-lg: 1.125rem;
-    --line-height-lg: 1.75rem;
-    --font-size-xl: 1.25rem;
-    --line-height-xl: 1.75rem;
-    --font-size-2xl: 1.5rem;
-    --line-height-2xl: 2rem;
-    --font-size-3xl: 1.875rem;
-    --line-height-3xl: 2.25rem;
-    --font-size-4xl: 2.25rem;
-    --line-height-4xl: 2.5rem;
-    --font-size-5xl: 3rem;
-    --line-height-5xl: 1;
-    --font-size-6xl: 3.75rem;
-    --line-height-6xl: 1;
-    --font-size-7xl: 4.5rem;
-    --line-height-7xl: 1;
-    --font-size-8xl: 6rem;
-    --line-height-8xl: 1;
-    --font-size-9xl: 8rem;
-    --line-height-9xl: 1;
-    /* Colors — 50/30/20 hierarchy */
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --line-height-xs: 1rem;
+  --font-size-sm: 0.875rem;
+  --line-height-sm: 1.25rem;
+  --font-size-base: 1rem;
+  --line-height-base: 1.5rem;
+  --font-size-lg: 1.125rem;
+  --line-height-lg: 1.75rem;
+  --font-size-xl: 1.25rem;
+  --line-height-xl: 1.75rem;
+  --font-size-2xl: 1.5rem;
+  --line-height-2xl: 2rem;
+  --font-size-3xl: 1.875rem;
+  --line-height-3xl: 2.25rem;
+  --font-size-4xl: 2.25rem;
+  --line-height-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --line-height-5xl: 1;
+  --font-size-6xl: 3.75rem;
+  --line-height-6xl: 1;
+  --font-size-7xl: 4.5rem;
+  --line-height-7xl: 1;
+  --font-size-8xl: 6rem;
+  --line-height-8xl: 1;
+  --font-size-9xl: 8rem;
+  --line-height-9xl: 1;
+  /* Colors — 50/30/20 hierarchy */
 
-    /* 🖤 50% — Foundation: obsidian deep blues */
-    --color-niel-secondary-100: #1e2533;
-    --color-niel-secondary-200: #1a202e;
-    --color-niel-secondary-300: #161c28;
-    --color-niel-secondary-400: #121822;
-    --color-niel-secondary-500: #0e141c;
-    --color-niel-secondary-600: #0c111a;
-    --color-niel-secondary-700: #0a0e16;
-    --color-niel-secondary-800: #080c12;
-    --color-niel-secondary-900: #06090e;
-    --color-niel-secondary-950: #04060a;
+  /* 🖤 50% — Foundation: obsidian deep blues */
+  --color-niel-secondary-100: #1e2533;
+  --color-niel-secondary-200: #1a202e;
+  --color-niel-secondary-300: #161c28;
+  --color-niel-secondary-400: #121822;
+  --color-niel-secondary-500: #0e141c;
+  --color-niel-secondary-600: #0c111a;
+  --color-niel-secondary-700: #0a0e16;
+  --color-niel-secondary-800: #080c12;
+  --color-niel-secondary-900: #06090e;
+  --color-niel-secondary-950: #04060a;
 
-    /* 🩶 30% — Silver accent: borders, text, hovers */
-    --color-niel-neutral-50: #f9fafb;
-    --color-niel-neutral-100: #f3f4f6;
-    --color-niel-neutral-200: #e5e7eb;
-    --color-niel-neutral-300: #d1d5db;
-    --color-niel-neutral-400: #9ca3af;
-    --color-niel-neutral-500: #6b7280;
-    --color-niel-neutral-600: #4b5563;
-    --color-niel-neutral-700: #374151;
-    --color-niel-neutral-800: #1f2937;
-    --color-niel-neutral-900: #111827;
-    --color-niel-neutral-950: #030712;
+  /* 🩶 30% — Silver accent: borders, text, hovers */
+  --color-niel-neutral-50: #f9fafb;
+  --color-niel-neutral-100: #f3f4f6;
+  --color-niel-neutral-200: #e5e7eb;
+  --color-niel-neutral-300: #d1d5db;
+  --color-niel-neutral-400: #9ca3af;
+  --color-niel-neutral-500: #6b7280;
+  --color-niel-neutral-600: #4b5563;
+  --color-niel-neutral-700: #374151;
+  --color-niel-neutral-800: #1f2937;
+  --color-niel-neutral-900: #111827;
+  --color-niel-neutral-950: #030712;
 
-    /* ✨ 20% — Royal details */
-    /* gold — hero headings, primary CTAs */
-    --color-niel-primary-50: #fdf8ef;
-    --color-niel-primary-100: #f8eccf;
-    --color-niel-primary-200: #edd9a2;
-    --color-niel-primary-300: #e2c47a;
-    --color-niel-primary-400: #d4b068;
-    --color-niel-primary-500: #c49c50;
-    --color-niel-primary-600: #a88440;
-    --color-niel-primary-700: #8c6c30;
-    --color-niel-primary-800: #705420;
-    --color-niel-primary-900: #543c10;
-    --color-niel-primary-950: #382408;
+  /* ✨ 20% — Royal details */
+  /* gold — hero headings, primary CTAs */
+  --color-niel-primary-50: #fdf8ef;
+  --color-niel-primary-100: #f8eccf;
+  --color-niel-primary-200: #edd9a2;
+  --color-niel-primary-300: #e2c47a;
+  --color-niel-primary-400: #d4b068;
+  --color-niel-primary-500: #c49c50;
+  --color-niel-primary-600: #a88440;
+  --color-niel-primary-700: #8c6c30;
+  --color-niel-primary-800: #705420;
+  --color-niel-primary-900: #543c10;
+  --color-niel-primary-950: #382408;
 
-    /* red — badges, emphasis, private indicators */
-    --color-niel-red-50: #fef2f2;
-    --color-niel-red-100: #fee2e2;
-    --color-niel-red-200: #fecaca;
-    --color-niel-red-300: #fca5a5;
-    --color-niel-red-400: #f87171;
-    --color-niel-red-500: #ef4444;
-    --color-niel-red-600: #dc2626;
-    --color-niel-red-700: #b91c1c;
-    --color-niel-red-800: #991b1b;
-    --color-niel-red-900: #7f1d1d;
-    --color-niel-red-950: #450a0a;
+  /* red — badges, emphasis, private indicators */
+  --color-niel-red-50: #fef2f2;
+  --color-niel-red-100: #fee2e2;
+  --color-niel-red-200: #fecaca;
+  --color-niel-red-300: #fca5a5;
+  --color-niel-red-400: #f87171;
+  --color-niel-red-500: #ef4444;
+  --color-niel-red-600: #dc2626;
+  --color-niel-red-700: #b91c1c;
+  --color-niel-red-800: #991b1b;
+  --color-niel-red-900: #7f1d1d;
+  --color-niel-red-950: #450a0a;
 
-    /* Warning (kept for actual warnings) */
-    --color-niel-warning-100: #f6d09f;
-    --color-niel-warning-200: #f6b47f;
-    --color-niel-warning-300: #f69f67;
-    --color-niel-warning-400: #f68443;
-    --color-niel-warning-500: #f66119;
-    --color-niel-warning-600: #e6560f;
-    --color-niel-warning-700: #c4450d;
-    --color-niel-warning-800: #9a2e0b;
-    --color-niel-warning-900: #7c2609;
-    --color-niel-warning-950: #5e1d07;
+  /* Warning (kept for actual warnings) */
+  --color-niel-warning-100: #f6d09f;
+  --color-niel-warning-200: #f6b47f;
+  --color-niel-warning-300: #f69f67;
+  --color-niel-warning-400: #f68443;
+  --color-niel-warning-500: #f66119;
+  --color-niel-warning-600: #e6560f;
+  --color-niel-warning-700: #c4450d;
+  --color-niel-warning-800: #9a2e0b;
+  --color-niel-warning-900: #7c2609;
+  --color-niel-warning-950: #5e1d07;
 
-    /* --- SYSTEM PALETTE --- */
-    --color-app-bg: #06090e;
-    --color-app-text: #f9fafb;
-    --color-app-text-muted: #8b949e;
-    --color-app-border: #d1d5db;
-    --color-app-surface: #0c111a;
+  /* --- SYSTEM PALETTE --- */
+  --color-app-bg: #06090e;
+  --color-app-text: #f9fafb;
+  --color-app-text-muted: #8b949e;
+  --color-app-border: #d1d5db;
+  --color-app-surface: #0c111a;
 
-    /* Semantic aliases */
-    --color-silver: #d1d5db;
-    --color-gold: #d4b068;
+  /* Semantic aliases */
+  --color-silver: #d1d5db;
+  --color-gold: #d4b068;
 }
 
 @layer base {
-    :root {
-        color-scheme: dark;
-        /* Main Layout */
-        --app-bg: var(--color-app-surface);
-        --app-text: var(--color-app-text);
-        --app-text-muted: var(--color-app-text-muted);
-        --app-surface: var(--color-app-surface);
-    }
+  :root {
+    color-scheme: dark;
+    /* Main Layout */
+    --app-bg: var(--color-app-surface);
+    --app-text: var(--color-app-text);
+    --app-text-muted: var(--color-app-text-muted);
+    --app-surface: var(--color-app-surface);
+  }
 
-    body {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-weight: 300;
-        background-color: #06090e;
-        background-image:
-            url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
-            radial-gradient(circle at 50% 50%,
-                rgba(12, 17, 26, 0.60) 0%,
-                rgba(8, 12, 18, 0.80) 50%,
-                rgba(6, 9, 14, 1.00) 100%);
-        background-attachment: fixed;
-        background-size: 256px 256px, cover;
-    }
+  body {
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
+    font-weight: 300;
+    background-color: #06090e;
+    background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(12, 17, 26, 0.6) 0%,
+        rgba(8, 12, 18, 0.8) 50%,
+        rgba(6, 9, 14, 1) 100%
+      );
+    background-attachment: fixed;
+    background-size:
+      256px 256px,
+      cover;
+  }
 
-    html::-webkit-scrollbar,
-    body::-webkit-scrollbar {
-        display: none !important;
-    }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none !important;
+  }
 }
 
 /* Gradients — silver default, gold for hero */
 
 .niel-gradient-h {
-    background: linear-gradient(to top,
-            var(--color-niel-neutral-500),
-            var(--color-niel-neutral-300),
-            var(--color-niel-neutral-400));
-    @apply bg-clip-text text-transparent transition-all duration-300;
+  background: linear-gradient(
+    to top,
+    var(--color-niel-neutral-500),
+    var(--color-niel-neutral-300),
+    var(--color-niel-neutral-400)
+  );
+  @apply bg-clip-text text-transparent transition-all duration-300;
 }
 
 .niel-gradient-w {
-    background: linear-gradient(to right,
-            var(--color-niel-neutral-500),
-            var(--color-niel-neutral-400),
-            var(--color-niel-neutral-500));
-    @apply bg-clip-text text-transparent transition-all duration-300;
+  background: linear-gradient(
+    to right,
+    var(--color-niel-neutral-500),
+    var(--color-niel-neutral-400),
+    var(--color-niel-neutral-500)
+  );
+  @apply bg-clip-text text-transparent transition-all duration-300;
 }
 
 .niel-gradient-gold-h {
-    background: linear-gradient(to top,
-            var(--color-niel-primary-400),
-            var(--color-niel-primary-300),
-            var(--color-niel-primary-500));
-    @apply bg-clip-text text-transparent transition-all duration-300;
+  background: linear-gradient(
+    to top,
+    var(--color-niel-primary-400),
+    var(--color-niel-primary-300),
+    var(--color-niel-primary-500)
+  );
+  @apply bg-clip-text text-transparent transition-all duration-300;
 }
 
 .niel-gradient-gold-w {
-    background: linear-gradient(to right,
-            var(--color-niel-primary-500),
-            var(--color-niel-primary-300),
-            var(--color-niel-primary-500));
-    @apply bg-clip-text text-transparent transition-all duration-300;
+  background: linear-gradient(
+    to right,
+    var(--color-niel-primary-500),
+    var(--color-niel-primary-300),
+    var(--color-niel-primary-500)
+  );
+  @apply bg-clip-text text-transparent transition-all duration-300;
 }
 
 /* Typing cursor — silver by default */
 .typing-cursor {
-    display: inline-block;
-    margin-left: 2px;
-    will-change: opacity;
-    background: linear-gradient(to right,
-            var(--color-niel-neutral-500),
-            var(--color-niel-neutral-300),
-            var(--color-niel-neutral-500));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    pointer-events: none;
-    user-select: none;
+  display: inline-block;
+  margin-left: 2px;
+  will-change: opacity;
+  background: linear-gradient(
+    to right,
+    var(--color-niel-neutral-500),
+    var(--color-niel-neutral-300),
+    var(--color-niel-neutral-500)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
 }
 
 .page-enter-active {
-    transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .page-enter-from {
-    opacity: 0;
-    transform: translateX(30px);
+  opacity: 0;
+  transform: translateX(30px);
 }
 
 .page-enter-to {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .page-leave-active {
-    transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .page-leave-from {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .page-leave-to {
-    opacity: 0;
-    transform: translateX(-30px);
+  opacity: 0;
+  transform: translateX(-30px);
 }
 
 @keyframes card-in {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-card-in {
-    animation: card-in 0.5s ease-out backwards;
+  animation: card-in 0.5s ease-out backwards;
 }

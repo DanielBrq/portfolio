@@ -1,9 +1,9 @@
 <script setup>
-import { useSound } from '~/composables/core/useSound';
-const { playMusic, stopMusic } = useSound();
+import { useSound } from '~/composables/core/useSound'
+const { playMusic, stopMusic } = useSound()
 
-stopMusic();
-playMusic();
+stopMusic()
+playMusic()
 </script>
 <template>
   <div>
