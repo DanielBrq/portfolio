@@ -69,7 +69,6 @@ export default defineNuxtConfig({
       sourcemap: false,
       minify: true,
       rollupOptions: {
-        output: { manualChunks: {} },
         onwarn(warning: any, defaultHandler: any) {
           if (warning.message.includes("Sourcemap is likely to be incorrect"))
             return;

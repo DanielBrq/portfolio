@@ -2,3 +2,7 @@ allowBuilds:
   '@parcel/watcher': false
   esbuild: false
   sharp: true
+
+# Force the version of vite
+overrides:
+  vite: ^8.0.0
