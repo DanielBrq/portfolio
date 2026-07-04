@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import ReturnButton from '~/components/returnButton.vue'
+import { useSound } from '~/composables/core/useSound'
 
 const { t } = useI18n()
 useHead({ title: t('home.options.skills') })
+
+const { playHover2 } = useSound()
 
 const backendSkills = [
   {
@@ -148,7 +151,7 @@ const nextSkills = () => {
 
     <div class="flex flex-col items-center justify-between h-full gap-6 z-10 w-full max-w-5xl mt-12 pb-10">
       <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 w-full">
-        <div v-for="(skill, index) in currentSkills" :key="skill?.name"
+        <div v-for="(skill, index) in currentSkills" :key="skill?.name" @mouseenter="playHover2()"
           class="group flex flex-col items-center gap-4 p-4 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] animate-card-in cursor-default"
           :style="{ animationDelay: `${index * 0.05}s` }">
           <div
@@ -159,7 +162,7 @@ const nextSkills = () => {
         </div>
       </div>
 
-      <button @click="nextSkills"
+      <button @click="nextSkills" @mouseenter="playHover2()"
         class="border border-white/5 rounded-sm py-3 px-10 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-app-text-muted hover:text-niel-primary-200 uppercase tracking-[0.2em] text-lg font-light">
         {{ buttonLabel[currentListIndex] }}
       </button>
