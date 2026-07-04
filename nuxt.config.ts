@@ -1,37 +1,37 @@
-import { defineNuxtConfig } from "nuxt/config";
-import tailwindcss from "@tailwindcss/vite";
+import { defineNuxtConfig } from 'nuxt/config'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   experimental: {
-    viewTransition: true,
-    payloadExtraction: true,
     componentIslands: true,
+    viteEnvironmentApi: true,
   },
   nitro: {
     routeRules: {
-      '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-      '/*.svg': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-      '/img/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
-    }
-  },
-  app: {
-    head: {
-      link: [{ rel: "preload", as: "script", href: "/_nuxt/entry.js" }],
+      '/fonts/**': {
+        headers: { 'cache-control': 'public, max-age=31536000, immutable' },
+      },
+      '/*.svg': {
+        headers: { 'cache-control': 'public, max-age=31536000, immutable' },
+      },
+      '/img/**': {
+        headers: { 'cache-control': 'public, max-age=31536000, immutable' },
+      },
     },
   },
   sourcemap: {
     client: false,
     server: false,
   },
-  ssr: true,
+  ssr: false,
   devtools: { enabled: false },
   modules: ['@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image', '@vercel/analytics'],
   image: {
-    provider: 'vercel'
+    provider: 'vercel',
   },
   pinia: {
-    storesDirs: ["stores"],
+    storesDirs: ['stores'],
   },
   i18n: {
     defaultLocale: 'en',
@@ -45,39 +45,32 @@ export default defineNuxtConfig({
       {
         code: 'en',
         language: 'en-US',
-        file: 'en.json'
+        file: 'en.json',
       },
       {
         code: 'es',
         language: 'es-CR',
-        file: 'es.json'
-      }
-    ]
+        file: 'es.json',
+      },
+    ],
   },
   vite: {
-    plugins: [
-      tailwindcss()
-    ],
+    plugins: [tailwindcss()],
     optimizeDeps: {
-      include: [
-        "workbox-window",
-        'gsap',
-        'gsap/ScrollTrigger',
-      ],
+      include: ['workbox-window', 'gsap', 'gsap/ScrollTrigger'],
     },
     build: {
       reportCompressedSize: true,
       sourcemap: false,
       minify: true,
       rollupOptions: {
-        output: { manualChunks: {} },
         onwarn(warning: any, defaultHandler: any) {
-          if (warning.message.includes("Sourcemap is likely to be incorrect"))
-            return;
-          defaultHandler(warning);
+          if (warning.message.includes('Sourcemap is likely to be incorrect'))
+            return
+          defaultHandler(warning)
         },
       },
     },
   },
-  css: ['@/assets/css/main.css']
-});
+  css: ['@/assets/css/main.css'],
+})

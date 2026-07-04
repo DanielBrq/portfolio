@@ -1,5 +1,5 @@
 <template>
-    <main class="min-h-screen w-full">
-        <slot />
-    </main>
+  <main class="w-dvw h-dvh max-h-dvh! overflow-hidden">
+    <slot />
+  </main>
 </template>
