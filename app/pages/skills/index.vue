@@ -138,49 +138,34 @@ const nextSkills = () => {
 }
 </script>
 <template>
-  <div
-    class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center p-4"
-  >
+  <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center p-10">
     <div class="flex flex-col gap-1 z-10 select-none items-center">
       <h1
-        class="text-6xl font-serif font-light uppercase tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center"
-      >
+        class="text-6xl font-serif font-light uppercase tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
         {{ t('home.options.skills') }}
       </h1>
     </div>
 
-    <div class="flex flex-col items-center gap-6 z-10 w-full max-w-5xl mt-12">
+    <div class="flex flex-col items-center justify-between h-full gap-6 z-10 w-full max-w-5xl mt-12 pb-10">
       <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 w-full">
-        <div
-          v-for="(skill, index) in currentSkills"
-          :key="skill?.name"
+        <div v-for="(skill, index) in currentSkills" :key="skill?.name"
           class="group flex flex-col items-center gap-4 p-4 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] animate-card-in cursor-default"
-          :style="{ animationDelay: `${index * 0.05}s` }"
-        >
+          :style="{ animationDelay: `${index * 0.05}s` }">
           <div
-            class="w-16 h-16 flex items-center justify-center saturate-0 transition-all duration-300 group-hover:saturate-100"
-          >
-            <NuxtImg
-              :src="skill?.icon"
-              :alt="skill?.name"
-              class="w-full h-full object-contain"
-            />
+            class="w-16 h-16 flex items-center justify-center saturate-0 transition-all duration-300 group-hover:saturate-100">
+            <NuxtImg :src="skill?.icon" :alt="skill?.name" class="w-full h-full object-contain" />
           </div>
-          <span
-            class="text-app-text-muted text-xs font-light tracking-[0.05em] uppercase"
-            >{{ skill?.name }}</span
-          >
+          <span class="text-app-text-muted text-xs font-light tracking-wider uppercase">{{ skill?.name }}</span>
         </div>
       </div>
 
-      <button
-        @click="nextSkills"
-        class="border border-white/5 rounded-sm py-3 px-10 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-app-text-muted hover:text-niel-primary-200 uppercase tracking-[0.2em] text-lg font-light"
-      >
+      <button @click="nextSkills"
+        class="border border-white/5 rounded-sm py-3 px-10 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-app-text-muted hover:text-niel-primary-200 uppercase tracking-[0.2em] text-lg font-light">
         {{ buttonLabel[currentListIndex] }}
       </button>
     </div>
-
-    <ReturnButton />
+    <div class="flex w-full flex-row justify-start items-start px-[22%]">
+      <ReturnButton />
+    </div>
   </div>
 </template>
