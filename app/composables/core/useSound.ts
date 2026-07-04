@@ -22,16 +22,25 @@ const clickSound = new Howl({
 // Music ========================================================
 const music = [
   new Howl({
-    src: ['/sounds/atmospheric-loop.wav'],
+    src: ['/music/bg-music-1.mp3'],
     volume: 0.3,
     loop: true,
   }),
-
   new Howl({
-    src: ['/sounds/atmospheric-piano.wav'],
+    src: ['/music/bg-music-2.mp3'],
     volume: 0.3,
     loop: true,
   }),
+  new Howl({
+    src: ['/music/bg-music-3.mp3'],
+    volume: 0.3,
+    loop: true,
+  }),
+  new Howl({
+    src: ['/music/bg-music-4.mp3'],
+    volume: 0.3,
+    loop: true,
+  })
 ]
 
 const MUSIC_KEY = 'portfolio-music'
