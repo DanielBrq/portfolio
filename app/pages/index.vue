@@ -4,7 +4,12 @@ import { useHomeAnimations } from '~/composables/pages/useHomeAnimations'
 
 const { t } = useI18n()
 
-useHead({ title: t('home.header') })
+useHead({
+  title: t('home.header'),
+  link: [
+    { rel: 'preload', as: 'video', href: '/video/home.mp4', type: 'video/mp4' }
+  ]
+})
 
 const {
   content,
