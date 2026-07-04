@@ -1,12 +1,24 @@
 <script setup lang="ts">
 import { useSound } from '~/composables/core/useSound'
+import { onMounted } from 'vue'
+
+const LOCALE_KEY = 'portfolio-locale'
 
 const { t, setLocale, locale } = useI18n()
 const { playClick } = useSound()
 
+onMounted(() => {
+  const saved = localStorage.getItem(LOCALE_KEY)
+  if (saved && saved !== locale.value) {
+    setLocale(saved)
+  }
+})
+
 function switchLanguage() {
   playClick()
-  setLocale(locale.value === 'en' ? 'es' : 'en')
+  const next = locale.value === 'en' ? 'es' : 'en'
+  setLocale(next)
+  localStorage.setItem(LOCALE_KEY, next)
 }
 </script>
 <template>

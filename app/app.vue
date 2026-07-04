@@ -1,9 +1,10 @@
 <script setup>
 import { useSound } from '~/composables/core/useSound'
-const { playMusic, stopMusic } = useSound()
+const { playMusic, isMusicPlaying } = useSound()
 
-stopMusic()
-playMusic()
+if (isMusicPlaying.value) {
+  playMusic()
+}
 </script>
 <template>
   <div>

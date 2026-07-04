@@ -34,7 +34,13 @@ const music = [
   }),
 ]
 
+const MUSIC_KEY = 'portfolio-music'
+
 const isMusicPlaying = ref(false)
+
+if (import.meta.client) {
+  isMusicPlaying.value = localStorage.getItem(MUSIC_KEY) !== '0'
+}
 
 export function useSound() {
   // Functions ====================================================
@@ -42,17 +48,17 @@ export function useSound() {
   function stopMusic() {
     music.forEach((m) => m.stop())
     isMusicPlaying.value = false
+    if (import.meta.client) localStorage.setItem(MUSIC_KEY, '0')
   }
 
   function playMusic() {
-    // Stop previous music
     stopMusic()
 
-    // Random track
     const randomIndex = Math.floor(Math.random() * music.length)
 
     music[randomIndex]?.play()
     isMusicPlaying.value = true
+    if (import.meta.client) localStorage.setItem(MUSIC_KEY, '1')
   }
 
   function playHover() {
