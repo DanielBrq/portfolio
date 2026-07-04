@@ -7,6 +7,12 @@ const buttonHover = new Howl({
   volume: 0.6,
 })
 
+const buttonHover2 = new Howl({
+  src: ['/sounds/type-sound.mp3'],
+  volume: 0.6,
+  loop: false,
+})
+
 const typeSound = new Howl({
   src: ['/sounds/type-sound.mp3'],
   volume: 0.6,
@@ -75,6 +81,11 @@ export function useSound() {
     buttonHover.play()
   }
 
+  function playHover2() {
+    buttonHover2.stop() // restart instantly
+    buttonHover2.play()
+  }
+
   function playType(duration = 2500) {
     typeSound.stop()
     typeSound.play()
@@ -95,6 +106,7 @@ export function useSound() {
 
   return {
     playHover,
+    playHover2,
     playType,
     stopType,
     playClick,
