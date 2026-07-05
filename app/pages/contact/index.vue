@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
+import { useCursorFollow } from '~/composables/core/useCursorFollow';
+
+onMounted(() => {
+  useCursorFollow();
+})
 
 const { t } = useI18n()
 
@@ -15,9 +20,13 @@ const copyToClipboard = (text: string) => {
 </script>
 <template>
   <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center py-10">
+    <div
+      class="bg-[url(pattern1.png)] w-full h-full absolute z-[-1] opacity-20 top-0 left-0 bg-niel-primary-500 bg-blend-multiply mask-y-from-95% mask-y-to-100% mask-x-from-95% mask-x-to-100%">
+    </div>
+    <div class="cursor-follow rounded-full mix-blend-color-dodge opacity-15 saturate-120" />
     <div class="flex flex-col gap-1 z-10 select-none px-4 items-center">
       <h1
-        class="text-2xl mobile:text-3xl sm:text-4xl tablet:text-5xl md:text-6xl font-serif font-light uppercase tracking-wider mobile:tracking-[0.1em] sm:tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
+        class="text-2xl mobile:text-3xl sm:text-4xl tablet:text-5xl md:text-6xl font-serif font-light uppercase tracking-wider mobile:tracking-widest sm:tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
         {{ t('contact.title') }}
       </h1>
       <h3 class="text-lg mobile:text-xl font-serif font-light uppercase tracking-[0.15em] text-niel-primary-200 mt-2">
@@ -37,7 +46,7 @@ const copyToClipboard = (text: string) => {
         </div>
         <div class="flex flex-col gap-1">
           <span class="text-xs uppercase tracking-[0.25em] text-app-text-muted font-light">{{ t('contact.labels.email')
-          }}</span>
+            }}</span>
           <span class="text-sm mobile:text-base text-app-text-muted lowercase tracking-wider font-light">{{ copied ?
             'COPIED' : 'daniel.barquero.dev@gmail.com' }}</span>
         </div>
@@ -68,7 +77,7 @@ const copyToClipboard = (text: string) => {
         </div>
         <div class="flex flex-col gap-1">
           <span class="text-xs uppercase tracking-[0.25em] text-app-text-muted font-light">{{ t('contact.labels.github')
-          }}</span>
+            }}</span>
           <span class="text-base text-app-text-muted lowercase tracking-wider font-light">/DanielBrq</span>
         </div>
       </a>

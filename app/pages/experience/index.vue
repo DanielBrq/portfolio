@@ -1,14 +1,25 @@
 <script setup lang="ts">
+import { useCursorFollow } from '~/composables/core/useCursorFollow';
+
+onMounted(() => {
+  useCursorFollow();
+})
+
 const { t } = useI18n()
 </script>
 <template>
   <div class="w-dvw h-dvh overflow-hidden flex flex-col px-6 mobile:px-[10%]">
-    <div class="flex-1 flex items-center justify-center min-h-0">
+    <div
+      class="bg-[url(pattern1.png)] w-full h-full absolute z-[-1] opacity-20 top-0 left-0 bg-niel-primary-500 bg-blend-multiply mask-y-from-95% mask-y-to-100% mask-x-from-95% mask-x-to-100%">
+    </div>
+    <div class="cursor-follow rounded-full mix-blend-color-dodge opacity-15 saturate-120" />
+
+    <div class="flex-1 flex items-center justify-center min-h-0 z-10">
       <div class="grid grid-cols-1 md:grid-cols-6 w-full max-w-6xl gap-6 h-full max-h-[80vh]">
         <section class="md:col-span-2 p-4 mobile:p-6 sm:p-8 flex flex-col justify-between gap-6 bg-[#0c111a] rounded-sm border border-white/5 transition-all duration-300
            hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(209,213,219,0.15)]">
           <div class="flex flex-col gap-4">
-            <h2 class="font-serif font-light uppercase tracking-[0.05em] mobile:tracking-[0.1em] sm:tracking-[0.15em] text-xl sm:text-[28px] leading-tight text-niel-primary-200 
+            <h2 class="font-serif font-light uppercase tracking-wider mobile:tracking-widest sm:tracking-[0.15em] text-xl sm:text-[28px] leading-tight text-niel-primary-200 
               flex items-center gap-2">
               <IconUser class="w-7 h-7 shrink-0" />
               {{ t('experience.details.aboutMe.title') }}
@@ -18,7 +29,7 @@ const { t } = useI18n()
             </p>
           </div>
           <div class="flex flex-col gap-4 border-t border-white/5 pt-6">
-            <h2 class="font-serif font-light uppercase tracking-[0.05em] mobile:tracking-[0.1em] sm:tracking-[0.15em] text-xl sm:text-[28px] leading-tight
+            <h2 class="font-serif font-light uppercase tracking-wider mobile:tracking-widest sm:tracking-[0.15em] text-xl sm:text-[28px] leading-tight
                text-niel-primary-200 flex items-center gap-2">
               <IconSchool class="w-7 h-7 shrink-0" />
               {{ t('experience.details.aboutMe.universityTitle') }}
