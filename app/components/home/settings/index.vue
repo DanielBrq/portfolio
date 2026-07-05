@@ -44,19 +44,14 @@ onMounted(() => {
   <div ref="rootEl" class="fixed bottom-4 right-4 mobile:bottom-8 mobile:right-8 text-white z-50 opacity-0">
     <div v-if="showConfigButton" @mouseenter="onMouseEnter">
       <button
-        class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400 text-sm sm:text-base md:text-lg desktop:text-xl text-center font-light uppercase tracking-[0.1em] mobile:tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em] desktop:tracking-[0.4em] transition-colors duration-200 cursor-pointer select-none"
-      >
+        class="nav-button group flex flex-col items-center justify-center text-niel-neutral-400 hover:text-niel-primary-400 text-sm sm:text-base md:text-lg desktop:text-xl text-center font-light uppercase tracking-widest mobile:tracking-[0.2em] sm:tracking-[0.35em] md:tracking-[0.5em] desktop:tracking-[0.4em] transition-colors duration-200 cursor-pointer select-none">
         <span>{{ t('home.settings.settingsButton') }}</span>
         <div
-          class="w-full h-0.5 mt-1 bg-linear-to-r from-transparent via-niel-primary-400 to-transparent scale-x-[0.15] opacity-0 group-hover:scale-x-130 group-hover:opacity-100 transition-all duration-500 ease-in-out origin-center"
-        ></div>
+          class="w-full h-0.5 mt-1 bg-linear-to-r from-transparent via-niel-primary-400 to-transparent scale-x-[0.15] opacity-0 group-hover:scale-x-130 group-hover:opacity-100 transition-all duration-500 ease-in-out origin-center">
+        </div>
       </button>
     </div>
-    <div
-      class="flex flex-col items-start gap-3 mt-2"
-      v-else="showSettingsOnHover"
-      @mouseleave="onMouseLeave"
-    >
+    <div class="flex flex-col items-start gap-3 mt-2" v-else="showSettingsOnHover" @mouseleave="onMouseLeave">
       <HomeSettingsLanguage />
       <HomeSettingsMusic />
     </div>
