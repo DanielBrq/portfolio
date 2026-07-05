@@ -7,7 +7,7 @@
       <section class="flex flex-col gap-14 pb-32">
         <div class="space-y-4">
           <h1
-            class="text-6xl font-serif font-light uppercase tracking-[0.15em] text-niel-primary-200"
+            class="text-2xl mobile:text-3xl sm:text-4xl tablet:text-5xl md:text-6xl font-serif font-light uppercase tracking-[0.05em] mobile:tracking-[0.1em] sm:tracking-[0.15em] text-niel-primary-200"
           >
             {{ $t('projects.portfolio.title') }}
           </h1>

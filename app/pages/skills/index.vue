@@ -141,10 +141,10 @@ const nextSkills = () => {
 }
 </script>
 <template>
-  <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center p-10">
+  <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center p-6 mobile:p-10">
     <div class="flex flex-col gap-1 z-10 select-none items-center">
       <h1
-        class="text-6xl font-serif font-light uppercase tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
+        class="text-2xl mobile:text-3xl sm:text-4xl tablet:text-5xl md:text-6xl font-serif font-light uppercase tracking-[0.05em] mobile:tracking-[0.1em] sm:tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
         {{ t('home.options.skills') }}
       </h1>
     </div>
@@ -163,11 +163,11 @@ const nextSkills = () => {
       </div>
 
       <button @click="nextSkills" @mouseenter="playHover2()"
-        class="border border-white/5 rounded-sm py-3 px-10 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-app-text-muted hover:text-niel-primary-200 uppercase tracking-[0.2em] text-lg font-light">
+        class="border border-white/5 rounded-sm py-3 px-6 mobile:px-10 cursor-pointer bg-[#0c111a] transition-all duration-300 hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-app-text-muted hover:text-niel-primary-200 uppercase tracking-[0.1em] mobile:tracking-[0.2em] text-base mobile:text-lg font-light">
         {{ buttonLabel[currentListIndex] }}
       </button>
     </div>
-    <div class="flex w-full flex-row justify-start items-start px-[22%]">
+    <div class="flex flex-row justify-center desktop:justify-start items-start px-6 mobile:px-[11%]">
       <ReturnButton />
     </div>
   </div>

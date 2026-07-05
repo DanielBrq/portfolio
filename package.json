@@ -29,7 +29,8 @@
   "devDependencies": {
     "@types/howler": "^2.2.13",
     "@types/node": "^26.1.0",
-    "prettier": "^3.9.4"
+    "prettier": "^3.9.4",
+    "prettier-plugin-tailwindcss": "^0.8.0"
   },
   "devEngines": {
     "packageManager": {
