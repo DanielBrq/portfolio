@@ -30,12 +30,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxt/image',
-    '@vercel/analytics',
-    '@vizejs/nuxt',
+    '@vercel/analytics'
   ],
-  vize: {
-    compiler: true,
-  },
   image: {
     provider: 'vercel',
   },
