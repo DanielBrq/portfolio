@@ -66,8 +66,8 @@ description: >-
 | **H3** — card titles      | 28px | `text-[28px]` ⚠️ | `leading-tight`   | `tracking-[0.15em]` | `font-serif`           | `text-niel-primary-200`                      |
 | **H4** — small headers    | 20px | `text-xl` ✅     | `leading-tight`   | `tracking-[0.10em]` | `font-serif`           | `text-niel-primary-200`                      |
 | **Body** — paragraphs     | 16px | `text-base` ✅   | `leading-relaxed` | `tracking-[0.02em]` | `font-sans font-light` | `text-app-text-muted`                        |
-| **Small** — metadata      | 14px | `text-sm` ✅     | `leading-snug`    | `tracking-[0.05em]` | `font-sans font-light` | `text-app-text-muted`                        |
-| **Tiny** — badges         | 12px | `text-xs` ✅     | `leading-snug`    | `tracking-[0.05em]` | `font-sans font-light` | per context                                  |
+| **Small** — metadata      | 14px | `text-sm` ✅     | `leading-snug`    | `tracking-wider` | `font-sans font-light` | `text-app-text-muted`                        |
+| **Tiny** — badges         | 12px | `text-xs` ✅     | `leading-snug`    | `tracking-wider` | `font-sans font-light` | per context                                  |
 
 ✅ = exact match in `@theme`. ⚠️ = no theme token — use `text-[40px]` / `text-[28px]`.
 

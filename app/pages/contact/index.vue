@@ -17,17 +17,17 @@ const copyToClipboard = (text: string) => {
   <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center py-10">
     <div class="flex flex-col gap-1 z-10 select-none px-4 items-center">
       <h1
-        class="text-6xl font-serif font-light uppercase tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
+        class="text-2xl mobile:text-3xl sm:text-4xl tablet:text-5xl md:text-6xl font-serif font-light uppercase tracking-wider mobile:tracking-[0.1em] sm:tracking-[0.15em] leading-tight text-niel-primary-200 niel-gradient-w animate-pulse-name text-center">
         {{ t('contact.title') }}
       </h1>
-      <h3 class="text-xl font-serif font-light uppercase tracking-[0.15em] text-niel-primary-200 mt-2">
+      <h3 class="text-lg mobile:text-xl font-serif font-light uppercase tracking-[0.15em] text-niel-primary-200 mt-2">
         {{ t('contact.subtitle') }}
       </h3>
     </div>
 
     <nav class="flex flex-col gap-4 w-full max-w-xl px-4 mt-12 z-10">
       <button @click="copyToClipboard('daniel.barquero.dev@gmail.com')"
-        class="group flex items-center gap-6 w-full p-6 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] cursor-pointer text-left">
+        class="group flex items-center gap-4 mobile:gap-6 w-full p-4 mobile:p-6 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] cursor-pointer text-left">
         <div class="flex items-center justify-center w-10 h-10 opacity-65 group-hover:opacity-100 transition-opacity">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
             class="w-6 h-6">
@@ -38,13 +38,13 @@ const copyToClipboard = (text: string) => {
         <div class="flex flex-col gap-1">
           <span class="text-xs uppercase tracking-[0.25em] text-app-text-muted font-light">{{ t('contact.labels.email')
           }}</span>
-          <span class="text-base text-app-text-muted lowercase tracking-wider font-light">{{ copied ? 'COPIED' :
-            'daniel.barquero.dev@gmail.com' }}</span>
+          <span class="text-sm mobile:text-base text-app-text-muted lowercase tracking-wider font-light">{{ copied ?
+            'COPIED' : 'daniel.barquero.dev@gmail.com' }}</span>
         </div>
       </button>
 
       <a href="https://www.linkedin.com/in/danielbrq/" target="_blank" rel="noopener noreferrer"
-        class="group flex items-center gap-6 w-full p-6 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-left">
+        class="group flex items-center gap-4 mobile:gap-6 w-full p-4 mobile:p-6 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-left">
         <div class="flex items-center justify-center w-10 h-10 opacity-65 group-hover:opacity-100 transition-opacity">
           <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
             <path
@@ -59,7 +59,7 @@ const copyToClipboard = (text: string) => {
       </a>
 
       <a href="https://github.com/DanielBrq/DanielBrq" target="_blank" rel="noopener noreferrer"
-        class="group flex items-center gap-6 w-full p-6 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-left">
+        class="group flex items-center gap-4 mobile:gap-6 w-full p-4 mobile:p-6 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] text-left">
         <div class="flex items-center justify-center w-10 h-10 opacity-65 group-hover:opacity-100 transition-opacity">
           <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
             <path
@@ -74,6 +74,6 @@ const copyToClipboard = (text: string) => {
       </a>
     </nav>
 
-    <ReturnButton />
+    <ReturnButton class="justify-center desktop:justify-start" />
   </div>
 </template>

@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
 import { useSound } from '~/composables/core/useSound'
 
 const { playHover2 } = useSound()
 
 const { t } = useI18n()
-
 </script>
 <template>
   <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-between px-6 py-10">
@@ -17,10 +15,9 @@ const { t } = useI18n()
       <ProjectsCardPreview :title="t('projects.portfolio.title')" :description="t('projects.portfolio.description')"
         to="/projects/portfolio" :repository-private="false" :t="t" website-url="https://dbarquero.dev"
         github-url="https://github.com/DanielBrq/portfolio" @mouseenter="playHover2" />
-
     </section>
-    <div class="w-full flex flex-row px-[20%]">
-      <ReturnButton to="/" />
+    <div class="flex flex-row justify-center desktop:justify-start items-start px-6 mobile:px-[11%]">
+      <ReturnButton />
     </div>
   </div>
 </template>

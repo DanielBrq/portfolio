@@ -46,7 +46,7 @@ const music = [
     src: ['/music/bg-music-4.mp3'],
     volume: 0.3,
     loop: true,
-  })
+  }),
 ]
 
 const MUSIC_KEY = 'portfolio-music'

@@ -40,7 +40,7 @@ export const useHomeAnimations = () => {
     playType()
 
     if (nameEl.value) {
-      typewriter(nameEl.value, 'Daniel Barquero C.', {
+      typewriter(nameEl.value, 'Daniel Barquero', {
         onComplete: () => {
           if (nameCursorEl.value) {
             killCursor(nameCursorEl.value)
