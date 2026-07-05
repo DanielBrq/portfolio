@@ -27,7 +27,7 @@ defineExpose({ startLeaveAnimation })
 
 <template>
   <section class="w-screen h-dvh scrollbar-none overscroll-y-none relative overflow-hidden z-1 bg-app-bg">
-    <video autoplay muted loop playsinline class="w-full h-full object-cover mobile:opacity-50 tablet:opacity-65 z-10">
+    <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-50 tablet:opacity-65 z-10">
       <source src="/video/home.mp4" type="video/mp4" />
     </video>
 
