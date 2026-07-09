@@ -13,7 +13,7 @@ const { t } = useI18n()
 <template>
   <div class="w-dvw h-dvh overflow-hidden flex flex-col items-center justify-between px-6 py-10">
     <div
-      class="bg-[url(pattern1.png)] w-full h-full absolute z-[-1] opacity-20 top-0 left-0 bg-niel-primary-500 bg-blend-multiply mask-y-from-95% mask-y-to-100% mask-x-from-95% mask-x-to-100%">
+      class="bg-[url(/img/pattern1.png)] w-full h-full absolute z-[-1] opacity-20 top-0 left-0 bg-niel-primary-500 bg-blend-multiply mask-y-from-95% mask-y-to-100% mask-x-from-95% mask-x-to-100%">
     </div>
     <div class="cursor-follow rounded-full mix-blend-color-dodge opacity-15 saturate-120" />
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
