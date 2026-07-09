@@ -20,11 +20,18 @@ export default defineNuxtConfig({
       },
     },
   },
+  app: {
+    head: {
+      link: [
+        { rel: 'preload', href: '/img/pattern1.png', as: 'image' },
+      ],
+    },
+  },
   sourcemap: {
     client: false,
     server: false,
   },
-  ssr: false,
+  ssr: true,
   devtools: { enabled: false },
   modules: [
     '@pinia/nuxt',
