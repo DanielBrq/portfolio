@@ -123,12 +123,6 @@ const otherSkills = [
   },
   {
     index: 5,
-    name: 'Dokploy',
-    icon: 'img/dokploy.png',
-    color: 'rgba(59, 130, 246, 0.6)',
-  },
-  {
-    index: 6,
     name: 'Cloudflare',
     icon: 'img/cloudflare.png',
     color: 'rgba(249, 115, 22, 0.6)',
