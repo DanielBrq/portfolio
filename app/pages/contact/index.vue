@@ -35,7 +35,7 @@ const copyToClipboard = (text: string) => {
     </div>
 
     <nav class="flex flex-col gap-4 w-full max-w-xl px-4 mt-12 z-10">
-      <button @click="copyToClipboard('daniel.barquero.dev@gmail.com')"
+      <button @click="copyToClipboard('dbarquero.dev@gmail.com')"
         class="group flex items-center gap-4 mobile:gap-6 w-full p-4 mobile:p-6 rounded-sm border border-white/5 bg-[#0c111a] transition-all duration-300 ease-out hover:border-[#c5a880] hover:shadow-[0_0_15px_rgba(197,168,128,0.15)] cursor-pointer text-left">
         <div class="flex items-center justify-center w-10 h-10 opacity-65 group-hover:opacity-100 transition-opacity">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
@@ -46,9 +46,9 @@ const copyToClipboard = (text: string) => {
         </div>
         <div class="flex flex-col gap-1">
           <span class="text-xs uppercase tracking-[0.25em] text-app-text-muted font-light">{{ t('contact.labels.email')
-          }}</span>
+            }}</span>
           <span class="text-sm mobile:text-base text-app-text-muted lowercase tracking-wider font-light">{{ copied ?
-            'COPIED' : 'daniel.barquero.dev@gmail.com' }}</span>
+            'COPIED' : 'dbarquero.dev@gmail.com' }}</span>
         </div>
       </button>
 
@@ -77,7 +77,7 @@ const copyToClipboard = (text: string) => {
         </div>
         <div class="flex flex-col gap-1">
           <span class="text-xs uppercase tracking-[0.25em] text-app-text-muted font-light">{{ t('contact.labels.github')
-          }}</span>
+            }}</span>
           <span class="text-base text-app-text-muted lowercase tracking-wider font-light">/DanielBrq</span>
         </div>
       </a>
