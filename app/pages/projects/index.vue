@@ -17,13 +17,11 @@ const { t } = useI18n()
     </div>
     <div class="cursor-follow rounded-full mix-blend-color-dodge opacity-15 saturate-120" />
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
-      <ProjectsCardPreview :title="t('projects.cardPreview.title')" :description="t('projects.cardPreview.description')"
-        to="/projects/legacygym" :repository-private="true" :t="t" website-url="https://legacygym.demo.dbarquero.dev/"
-        @mouseenter="playHover2" />
 
       <ProjectsCardPreview :title="t('projects.portfolio.title')" :description="t('projects.portfolio.description')"
         to="/projects/portfolio" :repository-private="false" :t="t" website-url="https://dbarquero.dev"
         github-url="https://github.com/DanielBrq/portfolio" @mouseenter="playHover2" />
+
     </section>
     <div class="flex flex-row justify-center desktop:justify-start items-start px-6 mobile:px-[11%]">
       <ReturnButton />
