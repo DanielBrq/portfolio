@@ -21,15 +21,38 @@
         "subtitle": "Desarrollador Full Stack",
         "period": "Octubre 2025 - Abril 2026",
         "achievements": {
-          "item_1": "Desarrollé interfaces frontend mobile-first con TailwindCSS siguiendo estándares pixel-perfect para mantener fidelidad con diseños en Figma y asegurar consistencia visual entre módulos.",
-          "item_2": "Construí y mantuve componentes reutilizables mediante librerías compartidas y Storybook, reduciendo duplicación de código entre aplicaciones frontend.",
-          "item_3": "Trabajé con arquitectura micro-frontend en React y Angular para dividir módulos de negocio y facilitar mantenimiento, despliegue y escalabilidad de las aplicaciones.",
-          "item_4": "Implementé APIs y lógica de negocio con .NET Core y MySQL, integrando autenticación externa con Clerk y manejo de datos multi-tenant con aislamiento entre clientes.",
-          "item_5": "Homologué persistencia de datos entre distintos servicios para evitar registros huérfanos y mantener congruencia entre sistemas de autenticación y base de datos.",
-          "item_6": "Desarrollé funcionalidades siguiendo principios de Clean Architecture para mantener separación de responsabilidades y facilitar la mantenibilidad del proyecto.",
-          "item_7": "Realicé revisiones de código enfocadas en prevención de bugs, cumplimiento de estándares internos y detección de malas prácticas durante el desarrollo.",
-          "item_8": "Colaboré bajo metodología SCRUM participando en planificación de sprints, resolución de bloqueos técnicos y coordinación de entregas en equipo.",
-          "item_9": "Utilicé Azure y Azure DevOps para versionamiento, administración de ramas y resolución de conflictos durante procesos de integración y despliegue."
+          "item_1": "Construí interfaces mobile-first con TailwindCSS, HTML, CSS y Figma.",
+          "item_2": "Construí librerías de componentes reutilizables con Storybook.",
+          "item_3": "Desarrollé módulos micro-frontend con React y Angular.",
+          "item_4": "Implementé APIs y lógica de negocio con .NET Core y MySQL.",
+          "item_5": "Integré autenticación Clerk y manejo multi-tenant.",
+          "item_6": "Apliqué Clean Architecture para separación de responsabilidades.",
+          "item_7": "Revisé código para prevenir bugs y cumplir estándares internos.",
+          "item_8": "Colaboré bajo SCRUM en planificación de sprints y coordinación de entregas.",
+          "item_9": "Gestioné versionamiento, ramas y CI/CD con Azure DevOps."
+        }
+      },
+      "omAgency": {
+        "description": "Desarrollo de aplicaciones web y servicios API para clientes de agencia.",
+        "subtitle": "Ingeniero de Software Full Stack",
+        "period": "Abril 2026 - Presente",
+        "achievements": {
+          "item_1": "Construí aplicaciones frontend con Angular y Vue/Nuxt.js con SEO e i18n.",
+          "item_2": "Integré funciones IA mediante OpenAI SDK.",
+          "item_3": "Construí servicios REST API con Node.js y C#/ASP.NET Core.",
+          "item_4": "Diseñé y mantuve bases de datos PostgreSQL con migraciones de PrismaORM.",
+          "item_5": "Desplegué aplicaciones en la plataforma Railway."
+        }
+      },
+      "mymTransportes": {
+        "description": "Desarrollo de aplicaciones web internas para gestión de transporte y taller.",
+        "subtitle": "Pasante de Ingeniería de Software Full Stack",
+        "period": "Mayo 2024 - Abril 2025",
+        "achievements": {
+          "item_1": "Construí aplicaciones frontend con React, HTML, CSS y JavaScript.",
+          "item_2": "Construí servicios REST API con Node.js.",
+          "item_3": "Diseñé y mantuve bases de datos Microsoft SQL Server.",
+          "item_4": "Desplegué aplicaciones con Microsoft Azure."
         }
       }
     }
